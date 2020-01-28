@@ -346,5 +346,3 @@ NDefines_Graphics.NGraphics.ROOT_FRONT_OFFSET = 2
 --NDefines_Graphics.NGraphics.WATER_MAP_MODE_COLOR_B = 0.0
 
 --NDefines_Graphics.NGraphics.BORDER_WIDTH = 2
-
-niggas
