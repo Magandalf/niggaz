@@ -1,0 +1,32 @@
+CHI_default_plan = {
+	name = "Nationalist China default plan"
+	desc = "Default behavior for Nationalist China"
+
+	enable = {
+		original_tag = CHI
+	}
+	abort = {
+		always = no
+	}
+
+	focus_factors = {
+	
+	}
+
+	research = {
+
+	}
+
+	ideas = {
+
+	}
+
+	# Keep small, as it is used as a factor for some things (such as research needs)
+	# Recommended around 1.0. Useful for relation between plans
+	weight = {
+		factor = 1
+		modifier = {
+			factor = 1.0
+		}
+	}
+}

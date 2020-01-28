@@ -1,0 +1,637 @@
+
+USA_pacific_campaign = {
+	USA_remove_japanese_threat = {
+		allowed = {
+			original_tag = USA
+		}
+		visible = {
+		has_idea = pacific_threat
+		}
+		fire_only_once = yes
+		
+		available = {
+		JAP = { NOT = {
+			controls_state = 327
+			controls_state = 623
+			controls_state = 624
+			controls_state = 625
+			controls_state = 627
+			controls_state = 628
+			controls_state = 333
+			controls_state = 334
+			controls_state = 672
+			controls_state = 335
+			controls_state = 667
+				}
+			}
+		}
+		complete_effect = { 
+			USA = {if = { limit = { has_idea = pacific_threat } remove_ideas = pacific_threat } }
+		}
+	}
+	USA_reduce_japanese_superiority = {
+		allowed = {
+			original_tag = USA
+		}
+		visible = {
+		has_idea = pacific_superiority
+		}
+		fire_only_once = yes
+		
+		available = {
+		JAP = { NOT = {
+		OR = {
+		AND = {
+			controls_state = 327
+			controls_state = 623
+			controls_state = 624
+			controls_state = 625
+			controls_state = 627
+			controls_state = 628
+			}
+		AND = {
+			controls_state = 333
+			controls_state = 334
+			controls_state = 672
+			controls_state = 335
+			controls_state = 667
+						}
+					}
+				}
+			}
+		}
+		complete_effect = { 
+			USA = {if = { limit = { has_idea = pacific_superiority } remove_ideas = pacific_superiority } }
+			USA = { add_ideas = pacific_threat }
+		}
+	}
+	USA_reduce_japanese_dominance = {
+		allowed = {
+			original_tag = USA
+		}
+		visible = {
+		has_idea = pacific_dominance
+		}
+		fire_only_once = yes
+		
+		available = {
+		JAP = { NOT = {
+			controls_state = 632
+			controls_state = 638
+			controls_state = 631
+			controls_state = 629
+			controls_state = 630
+				}
+			}
+		}
+		complete_effect = { 
+			USA = {if = { limit = { has_idea = pacific_dominance } remove_ideas = pacific_dominance } }
+			USA = { add_ideas = pacific_superiority }
+		}
+	}
+    USA_operation_detachment = {
+	    icon = generic_army_support
+		allowed = {
+		    original_tag = USA
+		}
+		visible = {
+		    has_war = yes
+		}
+		available = {
+		    USA = {controls_state = 638}
+			USA = {controls_state = 648}
+			NOT = {has_idea = USA_operation_idea}
+		}
+		cost = 10
+		fire_only_once = yes
+		complete_effect = {
+		    add_timed_idea = {
+			    idea = USA_operation_idea
+				days = 90
+			}
+		} 
+	}
+	
+	USA_operation_iceberg = {
+	    icon = generic_army_support
+		allowed = {
+		    original_tag = USA
+		}
+		visible = {
+		    has_war = yes
+		}
+		available = {
+		    USA = {controls_state = 638}
+			USA = {controls_state = 645}
+			NOT = {has_idea = USA_operation_idea}
+		}
+		cost = 10
+		fire_only_once = yes
+		complete_effect = {
+		    add_timed_idea = {
+			    idea = USA_operation_idea
+				days = 90
+			}
+		} 
+	}
+	
+	USA_operation_sandcrab = {
+	    icon = generic_army_support
+		allowed = {
+		    original_tag = USA
+		}
+		visible = {
+		    has_war = yes
+		}
+		available = {
+		    NOT = {USA = {controls_state = 650}} 
+			NOT = {has_idea = USA_operation_idea}
+			
+		}
+		cost = 10
+		fire_only_once = yes
+		complete_effect = {
+		    add_timed_idea = {
+			    idea = USA_operation_idea
+				days = 90
+			}
+		} 
+	}
+	
+	USA_operation_downfall = {
+	    icon = generic_army_support
+		allowed = {
+		    original_tag = USA
+		}
+		visible = {
+		    has_war = yes
+		}
+		available = {
+		    USA = {controls_state = 526}
+			USA = {controls_state = 645}
+			NOT = {has_idea = USA_operation_idea}
+			
+		}
+		cost = 10
+		fire_only_once = yes
+		complete_effect = {
+		    add_timed_idea = {
+			    idea = USA_operation_idea
+				days = 90
+			}
+		} 
+	}
+	
+	USA_nuke_hiroshima = {
+	    icon = generic_ignite_civil_war
+		allowed = {
+		    original_tag = USA
+		}
+		visible = {
+		    has_war = yes
+		}
+		available = {
+		    USA = {controls_state = 526}
+			USA = {controls_state = 645}
+			has_idea = robert_oppenheimer
+			has_completed_focus = USA_manhattan_project
+			
+		}
+		cost = 10
+		fire_only_once = yes
+		days_remove = 120
+		remove_effect = {
+		    custom_effect_tooltip = USA_atomic_bomb_hiroshima
+			launch_nuke = {
+                province = 1092
+                state = 529
+                controller = USA
+                use_nuke = yes
+            }
+		} 
+	}
+	
+	USA_nuke_nagasaki = {
+	    icon = generic_ignite_civil_war
+		allowed = {
+		    original_tag = USA
+		}
+		visible = {
+		    has_war = yes
+		}
+		available = {
+		    USA = {controls_state = 526}
+			USA = {controls_state = 645}
+			has_idea = robert_oppenheimer
+			has_completed_focus = USA_manhattan_project
+			
+		}
+		cost = 10
+		fire_only_once = yes
+		days_remove = 120
+		remove_effect = {
+		    custom_effect_tooltip = USA_atomic_bomb_nagasaki
+			launch_nuke = {
+                province = 9950
+                state = 528
+                controller = USA
+                use_nuke = yes
+            }
+		} 
+	}
+    
+}
+
+USA_atlantic_campaign = {
+	
+	USA_operation_torch = {
+	    icon = generic_army_support
+		allowed = {
+		    original_tag = USA
+		}
+		visible = {
+		    has_war = yes
+		}
+		available = {
+			EFR = { exists = yes }
+			has_completed_focus = USA_vichy_ultimatum
+		    NOT = {has_idea = USA_operation_idea}
+			NOT = {has_idea = USA_real_threat}
+			NOT = {FRA = {controls_state = 461} }
+		}
+		cost = 25
+		fire_only_once = yes
+		complete_effect = {
+			custom_effect_tooltip = GDU_usa_torch_war_tt
+			declare_war_on = {
+				target = EFR
+				type = annex_everything
+			}
+			USA = { transfer_state = 461 }
+			USA = { transfer_state = 462 }
+		    add_timed_idea = {
+			    idea = USA_operation_idea
+				days = 30
+			}
+			hidden_effect = {
+				GER = { puppet = EFR }
+			}
+			custom_effect_tooltip = USA_deploy_light_tanks
+			hidden_effect = {
+					division_template = {
+						name = "Heavy Cavalry Division"
+						priority = 2
+						division_names_group = ROM_INF_01
+						regiments = {
+							light_armor = { x = 0 y = 0 }
+							light_armor = { x = 0 y = 1 }
+							light_armor = { x = 0 y = 2 }
+				
+		    	   		 	light_armor = { x = 1 y = 0 }
+							light_armor = { x = 1 y = 1 }
+							light_armor = { x = 1 y = 2 }
+				
+		    	   		 	motorized = { x = 2 y = 0 }
+							motorized = { x = 2 y = 1 }
+							motorized = { x = 2 y = 2 }
+							motorized = { x = 2 y = 3 }
+						}
+						support = {
+							engineer = { x = 0 y = 0 }
+							recon = { x = 0 y = 1 }
+						}
+					}
+					division_template = {
+				    name = "United States Marine Corps"
+					priority = 2
+					division_names_group = ROM_INF_01
+					regiments = {
+					    infantry = { x = 0 y = 0}
+						infantry = { x = 0 y = 1}
+						infantry = { x = 0 y = 2}
+						
+						infantry = { x = 1 y = 0}
+						infantry = { x = 1 y = 1}
+						infantry = { x = 1 y = 2}
+						
+						infantry = { x = 2 y = 0}
+						infantry = { x = 2 y = 1}
+						infantry = { x = 2 y = 2}
+						infantry = { x = 2 y = 3}
+						
+						artillery_brigade = {x = 3 y = 0}
+						artillery_brigade = {x = 3 y = 1}
+						artillery_brigade = {x = 3 y = 2}
+						artillery_brigade = {x = 3 y = 3}
+						
+						infantry = {x = 4 y = 0}
+						infantry = {x = 4 y = 1}
+						infantry = {x = 4 y = 2}
+						infantry = {x = 4 y = 3}
+					}
+					support = {
+						engineer = { x = 0 y = 0 }
+						recon = { x = 0 y = 1 }
+					}
+				}
+					
+				}
+				357 = {
+					create_unit = {
+						division = "name = \"4. Heavy Cavalry Division\" division_template = \"Heavy Cavalry Division\" start_experience_factor = 1.0" 
+						owner = USA
+					}
+					create_unit = {
+						division = "name = \"3. Heavy Cavalry Division\" division_template = \"Heavy Cavalry Division\" start_experience_factor = 1.0" 
+						owner = USA
+					}
+					create_unit = {
+						division = "name = \"2. Heavy Cavalry Division\" division_template = \"Heavy Cavalry Division\" start_experience_factor = 1.0" 
+						owner = USA
+					}
+					create_unit = {
+						division = "name = \"1. Heavy Cavalry Division\" division_template = \"Heavy Cavalry Division\" start_experience_factor = 1.0" 
+						owner = USA
+					}
+					
+					create_unit = {
+						division = "name = \"4. USMC Division\" division_template = \"United States Marine Corps\" start_experience_factor = 1.0" 
+						owner = USA
+					}
+					
+					create_unit = {
+						division = "name = \"3. USMC Division\" division_template = \"United States Marine Corps\" start_experience_factor = 1.0" 
+						owner = USA
+					}
+					
+					create_unit = {
+						division = "name = \"2. USMC Division\" division_template = \"United States Marine Corps\" start_experience_factor = 1.0" 
+						owner = USA
+					}
+					
+					create_unit = {
+						division = "name = \"1. USMC Division\" division_template = \"United States Marine Corps\" start_experience_factor = 1.0" 
+						owner = USA
+					}
+				}
+		} 
+		
+	}
+	
+	USA_operation_husky = {
+	    icon = generic_army_support
+		allowed = {
+		    original_tag = USA
+		}
+		visible = {
+		    has_war = yes
+		}
+		available = {
+		    NOT = {ITA = {controls_state = 448}} 
+			NOT = {has_idea = USA_operation_idea}
+			NOT = {has_idea = USA_real_threat}
+			
+		}
+		cost = 25
+		fire_only_once = yes
+		complete_effect = {
+		    add_timed_idea = {
+			    idea = USA_operation_idea
+				days = 30
+			}
+		} 
+	}
+	
+	USA_d_day = {
+	    icon = generic_army_support
+		allowed = {
+		    original_tag = USA
+		}
+		visible = {
+		    has_war = yes
+		}
+		available = {
+		    NOT = {has_idea = USA_operation_idea}
+			NOT = {has_idea = USA_real_threat}
+			NOT = {ITA = {controls_state = 448} }
+			FRA = {controls_state = 461}
+			or = {
+			    NOT = {ITA = {controls_state = 115} }
+				NOT = {ITA = {controls_state = 114} }
+			}
+		}
+		cost = 25
+		fire_only_once = yes
+		complete_effect = {
+		    add_timed_idea = {
+			    idea = USA_dday
+				days = 30
+			}
+			ENG = {
+			    add_timed_idea = {
+			    idea = USA_dday
+				days = 30
+			    }
+			}
+			AST = {
+			    add_timed_idea = {
+			    idea = USA_dday
+				days = 30
+			    }
+			}
+			RAJ = {
+			    add_timed_idea = {
+			    idea = USA_dday
+				days = 30
+			    }
+			}
+			CAN = {
+			    add_timed_idea = {
+			    idea = USA_dday
+				days = 30
+			    }
+			}
+			SAF = {
+			    add_timed_idea = {
+			    idea = USA_dday
+				days = 30
+			    }
+			}
+		} 
+		
+	}
+}
+
+
+USA_aid_britain = {
+	USA_establish_personal_communication_with_former_naval_person = {
+
+		icon = generic_political_discourse
+
+		allowed = {
+			original_tag = USA
+		}
+
+		available = {
+			has_country_leader = { ruling_only = yes name = "Franklin Delano Roosevelt" }
+			has_country_flag = blood_toil_tears_sweat_speech
+			ENG = { has_defensive_war = yes }
+		}
+
+		cost = 50
+		fire_only_once = yes
+		ai_will_do = {
+			factor = 1
+			modifier = {
+				factor = 10
+				has_opinion = { target = ENG value > 60 }
+			}
+			modifier = {
+				factor = 10
+				has_opinion = { target = ENG value > 99 }
+			}
+		}
+
+		visible = {
+			has_war = no
+		}
+
+		complete_effect = {
+			add_war_support = 0.05
+			add_opinion_modifier = { target = ENG modifier = USA_special_relationship }
+			reverse_add_opinion_modifier = { target = ENG modifier = USA_special_relationship }
+		}
+	}
+
+	USA_battle_domestic_isolationism = {
+
+		icon = generic_civil_support
+
+		allowed = {
+			original_tag = USA
+		}
+
+		available = {
+			has_country_leader = { ruling_only = yes name = "Franklin Delano Roosevelt" }
+			has_country_flag = fight_on_the_beaches_speech
+			ENG = { has_defensive_war = yes }
+		}
+
+		cost = 50
+		fire_only_once = yes
+		ai_will_do = {
+			factor = 1
+			modifier = {
+				factor = 10
+				has_opinion = { target = ENG value > 60 }
+			}
+			modifier = {
+				factor = 10
+				has_opinion = { target = ENG value > 99 }
+			}
+		}
+
+		modifier = {
+			war_support_weekly = 0.002		
+		}
+
+		days_remove = 180
+
+		visible = {
+			has_war = no
+		}
+
+		complete_effect = {
+			add_war_support = 0.05
+		}
+	}
+
+	USA_emergency_arms_deliveries = {
+
+		icon = generic_prepare_civil_war
+
+		allowed = {
+			original_tag = USA
+		}
+
+		available = {
+			has_country_leader = { ruling_only = yes name = "Franklin Delano Roosevelt" }
+			has_country_flag = this_was_their_finest_hour_speech
+			ENG = { has_defensive_war = yes }
+		}
+
+		cost = 50
+		fire_only_once = yes
+		ai_will_do = {
+			factor = 1
+			modifier = {
+				factor = 10
+				has_opinion = { target = ENG value > 60 }
+			}
+			modifier = {
+				factor = 10
+				has_opinion = { target = ENG value > 99 }
+			}
+		}
+
+		modifier = {
+			war_support_weekly = 0.005		
+		}
+
+		days_remove = 30
+
+		visible = {
+			has_war = no
+		}
+
+		complete_effect = {
+			ENG = {
+				add_equipment_to_stockpile = { type = infantry_equipment_0 amount = 20000 producer = USA }
+				add_equipment_to_stockpile = { type = artillery_equipment_1 amount = 300 producer = USA }
+				add_equipment_to_stockpile = { type = support_equipment_1 amount = 300 producer = USA }
+				country_event = { id = wtt_britain.30 }
+			}
+		}
+	}
+
+	USA_arsenal_of_democracy_decision = {
+
+		icon = generic_industry
+
+		allowed = {
+			original_tag = USA
+		}
+
+		available = {
+			has_country_leader = { ruling_only = yes name = "Franklin Delano Roosevelt" }
+			has_country_flag = mers_el_kebir_raid
+			ENG = { has_defensive_war = yes }
+		}
+
+		cost = 50
+		fire_only_once = yes
+		ai_will_do = {
+			factor = 10
+		}
+
+		visible = {
+			has_war = no
+		}
+
+		modifier = {
+			war_support_weekly = 0.001		
+			industrial_capacity_factory = 0.02
+			industrial_capacity_dockyard = 0.02
+			consumer_goods_factor = -0.05
+		}
+
+		days_remove = 360
+
+		complete_effect = {
+		}
+	}
+}
+
+foreign_support = {
+
+}

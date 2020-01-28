@@ -1,0 +1,22 @@
+﻿l_english:
+ FIN_SIBERIA_fascism:0 "Greater Finland"
+ FIN_SIBERIA_fascism_DEF:0 "Greater Finland"
+ EGY_ENG_autonomy_colony:0 "British Egypt"
+ EGY_ENG_autonomy_puppet:0 "British Egypt"
+ EGY_ENG_autonomy_integrated_puppet:0 "British Egypt"
+
+CRO_ITA_autonomy_dominion:0 "Autonomous Region of Croatia"
+CRO_ITA_autonomy_dominion_DEF:0 "The Autonomous Region of Croatia"
+CRO_ITA_autonomy_colony:0 "Region of Croatia"
+CRO_ITA_autonomy_colony_DEF:0 "Region of Croatia" 
+CRO_ITA_autonomy_puppet:0 "Territory of Croatia"
+CRO_ITA_autonomy_puppet_DEF:0 "The Territory of Croatia"
+CRO_ITA_autonomy_integrated_puppet:0 "Italian-Croatia"
+CRO_ITA_autonomy_integrated_puppet_DEF:0 "Italian-Croatia"
+
+CRO_ITA_fascism_autonomy_reorganised_state_DEF:0 "The Autonomous Region of Croatia"
+CRO_ITA_fascism_autonomy_puppet_state_DEF:0 "The Territory of Croatia"
+CRO_ITA_fascism_autonomy_military_administration_DEF:0 "Italian-Croatia"
+CRO_ITA_fascism_autonomy_reorganised_state:0 "Autonomous Region of Croatia"
+CRO_ITA_fascism_autonomy_puppet_state:0 "Territory of Croatia"
+CRO_ITA_fascism_autonomy_military_administration:0 "Italian-Croatia"

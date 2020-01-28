@@ -1,0 +1,154 @@
+﻿###########################
+# RAJ TFV events Events
+###########################
+
+add_namespace = tfv_raj
+
+#RAF funding
+country_event = {
+	id = tfv_raj.1
+	title = tfv_raj.1.t	
+	desc = tfv_raj.1.desc	#
+	picture = GFX_report_event_fighters
+	
+	is_triggered_only = yes
+	
+	option = { 
+		name = tfv_raj.1.a
+		ai_chance = {
+			base = 100
+		}
+		ENG = { country_event = { id = tfv_raj.2 } }
+	}
+	option = { 
+		name = tfv_raj.1.b
+		trigger = {
+			has_tech = early_fighter
+			NOT = { has_tech = fighter1}
+		}
+		add_equipment_to_stockpile = { type = fighter_equipment_0 amount = 20 producer = RAJ }
+	}
+	option = { 
+		name = tfv_raj.1.b
+		trigger = {
+			has_tech = fighter1
+			NOT = { has_tech = fighter2}
+		}
+		add_equipment_to_stockpile = { type = fighter_equipment_1 amount = 20 producer = RAJ }
+	}
+	option = { 
+		name = tfv_raj.1.b
+		trigger = {
+			has_tech = fighter2
+			NOT = { has_tech = fighter3}
+		}
+		add_equipment_to_stockpile = { type = fighter_equipment_2 amount = 20 producer = RAJ }
+	}
+	option = { 
+		name = tfv_raj.1.b
+		trigger = {
+			has_tech = fighter3
+		}
+		add_equipment_to_stockpile = { type = fighter_equipment_3 amount = 20 producer = RAJ }
+	}
+
+}
+
+country_event = {
+	id = tfv_raj.2
+	title = tfv_raj.2.t	
+	desc = tfv_raj.2.desc	#
+	picture = GFX_report_event_fighters
+	
+	is_triggered_only = yes
+
+	option = { 
+		name = tfv_raj.2.a
+		trigger = {
+			has_tech = early_fighter
+			NOT = { has_tech = fighter1}
+		}
+		add_equipment_to_stockpile = { type = fighter_equipment_0 amount = 20 producer = ENG }
+	}
+	option = { 
+		name = tfv_raj.2.a
+		trigger = {
+			has_tech = fighter1
+			NOT = { has_tech = fighter2}
+		}
+		add_equipment_to_stockpile = { type = fighter_equipment_1 amount = 20 producer = ENG }
+	}
+	option = { 
+		name = tfv_raj.2.a
+		trigger = {
+			has_tech = fighter2
+			NOT = { has_tech = fighter3}
+		}
+		add_equipment_to_stockpile = { type = fighter_equipment_2 amount = 20 producer = ENG }
+	}
+	option = { 
+		name = tfv_raj.2.a
+		trigger = {
+			has_tech = fighter3
+		}
+		add_equipment_to_stockpile = { type = fighter_equipment_3 amount = 20 producer = ENG }
+	}
+
+}
+
+##################################################
+#RAJ_battaglione_azad_hindoustan focus completed
+##################################################
+country_event = {
+	id = tfv_raj.201
+	title = tfv_raj.201.t				# ITA receives paratrooper division from RAJ
+	desc = tfv_raj.201.desc
+	picture = GFX_report_event_indian_parade
+	
+	is_triggered_only = yes
+	
+	option = {
+		name = tfv_raj.201.a
+		
+		if = {
+			limit = {
+				RAJ = { is_ai = yes }
+			}
+		
+			division_template = {
+				name = "Battaglione Azad Hindoustan" #Hindu paratrooper division created for Italy
+				division_names_group = ITA_PAR_01
+				is_locked = yes
+				regiments = {
+					paratrooper = { x = 0 y = 0 }
+					paratrooper = { x = 0 y = 1 }
+					paratrooper = { x = 0 y = 2 }
+
+					paratrooper = { x = 1 y = 0 }
+					paratrooper = { x = 1 y = 1 }
+					paratrooper = { x = 1 y = 2 }
+				}
+			}
+
+			random_owned_controlled_state = {
+				prioritize = { 2 }
+				
+				custom_effect_tooltip = tfv_raj_focus_paratrooper_tt
+				hidden_effect = {
+					create_unit = { 
+						division = "name = \"Battaglione Azad Hindoustan\" division_template = \"Battaglione Azad Hindoustan\" start_experience_factor = 1.0" 
+						owner = ITA
+					}
+				}
+			}
+			
+			else = {
+				custom_effect_tooltip = tfv_raj_focus_paratrooper_tt
+			}
+		}
+	}
+}
+
+##################################################
+#Quit India movement resistance events
+##################################################

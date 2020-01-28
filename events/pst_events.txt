@@ -1,0 +1,311 @@
+﻿add_namespace = pst
+
+##Event: Suprise German Invasion!
+country_event = {
+ id = pst.1
+ title = pst.1.title
+ desc = pst.1.desc
+ picture = GFX_report_event_hungarian_soldiers
+ fire_only_once = yes
+ major = yes
+ trigger = {
+    has_war_with = GER
+	tag = SOV
+	NOT = { has_global_flag = barbarossa_started_LB } 
+	NOT = { has_global_flag = fall_of_allies_lb  }
+ }
+	option = {
+		name = pst.1.a
+		ai_chance = { factor = 1}
+		add_timed_idea = { 
+		    idea = SOV_army_in_chaos
+		    days = 30
+		}	
+		add_timed_idea = {
+		    idea = SOV_disorganized_tank_crews
+			days = 30
+		}
+	    add_timed_idea = { 
+		    idea = SOV_lack_of_officers 
+		    days = 120
+	    }
+	   add_timed_idea = { 
+		    idea = SOV_disorganized_airforce
+		    days = 150
+	    }
+	   
+		
+	}
+}
+
+##Event: Onwards To Berlin Comrades!
+country_event = {
+ id = pst.6
+ title = pst.6.title
+ desc = pst.6.desc
+ picture = GFX_report_event_swedish_soldier
+ fire_only_once = yes
+ major = yes
+    trigger = {
+	    tag = SOV
+		GER = { surrender_progress > 0.15 }
+	}
+	option = {
+	name = pst.5.a
+	ai_chance = { factor = 1}
+	}
+} 
+
+##Event: Endsieg
+country_event = {
+ id = pst.7
+ title = pst.7.title
+ desc = pst.7.desc
+ picture = GFX_DH_Himmler_Hitler
+ fire_only_once = yes
+ major = yes
+ trigger = {
+        tag = GER
+        surrender_progress > 0.10
+	}
+	option = {
+		name = pst.7.a
+		ai_chance = { factor = 1}
+		add_timed_idea= { 
+        idea = GER_endsieg 
+        days = 1090
+        }
+	}
+}
+
+##Event: Crusade On Bolshevism
+country_event = {
+ id = pst.8
+ title = pst.8.title
+ desc = pst.8.desc
+ picture = GFX_report_event_soviet_army_greeted
+ fire_only_once = yes
+ major = yes
+    trigger = {
+       tag = GER
+	   has_war_with = SOV
+	   NOT = { has_global_flag = barbarossa_started_LB }
+	   NOT = { has_global_flag = fall_of_allies_lb  }
+    }	
+	option = {
+		name = pst.8.a
+		ai_chance = { factor = 1}
+		add_timed_idea = { 
+		    idea = GER_crusade_on_bolshevism 
+		    days = 120
+	    }
+		ROM = {
+		    add_timed_idea = { 
+		    idea = GER_crusade_on_bolshevism 
+		    days = 120
+	    }
+		}
+		HUN = {
+		    add_timed_idea = { 
+		    idea = GER_crusade_on_bolshevism 
+		    days = 120
+	    }
+		}
+		SPR = {
+		    add_timed_idea = { 
+		    idea = GER_crusade_on_bolshevism 
+		    days = 120
+	    }
+		}
+		ITA = {
+		    add_timed_idea = { 
+		    idea = GER_crusade_on_bolshevism 
+		    days = 120
+	    }
+		}
+	
+	}
+
+}
+
+##Event: Attack On Pearl Harbour
+country_event = {
+ id = pst.11
+ title = pst.11.title
+ desc = pst.11.desc
+ picture = GFX_report_event_usa_pearl_harbor_airphoto
+	is_triggered_only = yes
+	fire_only_once = yes
+ major = yes
+	immediate = {
+	    add_timed_idea = {
+		    idea = USA_pearl_harbour
+		    days = 90
+	    }
+	}	
+	option = {
+		name = pst.11.a
+		show_ideas_tooltip = USA_pearl_harbour
+		news_event = {
+		    id = pst.16
+		}
+	}
+}
+
+# Day Of Infamy
+news_event = {
+	id = pst.16
+	title = pst.16.title
+	desc = pst.16.desc
+	picture = GFX_news_event_fdr_radio
+	
+	major = yes
+	
+	is_triggered_only = yes
+	immediate = {
+		hidden_effect = {
+		sound_effect = dayofinfamy
+		}
+	}
+	option = {
+		name = pst.16.a
+	}
+}
+
+## MOSCOW CAPTURED
+country_event = {
+    id = pst.20
+	title = pst.20.title
+	desc = news.106.d
+	picture = GFX_DH_Himmler_Hitler
+	fire_only_once = yes
+	major = yes
+	trigger = {
+		date > 1941.1.1
+	    tag = GER
+		NOT = {
+		    219 = {
+				is_owned_and_controlled_by = SOV
+			}
+		}
+	}
+	mean_time_to_happen = {
+		days = 10
+	}
+	option = {
+	    name = pst.20.a
+		ai_chance = {factor = 1}
+		GER = {
+		add_timed_idea = {
+			idea = GER_moscow_captured
+			days = 120
+		    }
+		}
+	}
+}
+
+## Stalingrad CAPTURED
+country_event = {
+    id = pst.21
+	title = pst.21.title
+	desc = news.105.d
+	picture = GFX_DH_Himmler_Hitler
+	fire_only_once = yes
+	major = yes
+	trigger = {
+		date > 1941.1.1
+	    tag = GER
+		NOT = {
+		    217 = {
+				is_owned_and_controlled_by = SOV
+			}
+		}
+	}
+	mean_time_to_happen = {
+		days = 10
+	}
+	option = {
+	    name = pst.21.a
+		ai_chance = {factor = 1}
+		GER = {
+		add_timed_idea = {
+			idea = GER_stalingrad_captured
+			days = 120
+		    }
+		}
+
+	}
+}
+
+## Leningrad CAPTURED
+country_event = {
+    id = pst.22
+	title = pst.22.title
+	desc = news.103.d
+	picture = GFX_DH_Himmler_Hitler
+	fire_only_once = yes
+	major = yes
+	trigger = {
+		date > 1941.1.1
+	    tag = GER
+		NOT = {
+		    195 = {
+				is_owned_and_controlled_by = SOV
+			}
+		}
+	}
+	mean_time_to_happen = {
+		days = 10
+	}
+	option = {
+	    name = pst.22.a
+		ai_chance = {factor = 1}
+		GER = {
+		add_timed_idea = {
+			idea = GER_leningrad_captured
+			days = 120
+		    }
+		}
+	}
+}
+###London Captured
+country_event = {
+    id = pst.23
+	title = pst.23.title
+	desc = pst.23.desc
+	picture = GFX_DH_Foggy_London
+	fire_only_once = yes
+	major = yes
+	trigger = {
+	    tag = GER
+		NOT = {
+		    126 = {
+				is_controlled_by = ENG
+			}
+		}
+	}
+	option = {
+	    name = pst.23.a
+		ai_chance = {factor = 1}
+	}
+}
+
+###Göring and Halifax
+country_event = {
+    id = pst.24
+	title = pst.24.title
+	desc = pst.24.desc
+	picture = GFX_DH_Halifax_Goering
+	fire_only_once = yes
+	major = yes
+	trigger = {
+	    tag = GER
+		ENG = {
+		    has_capitulated = yes
+		}
+	}
+	option = {
+	    name = pst.24.a
+		ai_chance = {factor = 1}
+	}
+}

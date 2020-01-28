@@ -1,0 +1,773 @@
+#Category only allowed for GER
+
+GER_eastern_front_category = {
+	
+	GER_operation_typhoon = {
+		available = {
+		    has_war_with = SOV
+			NOT = {has_idea = SOV_military_operation_idea}
+			NOT = {has_idea = fall_blau}
+			NOT = {has_idea = operation_citadel}
+			or = {
+			    GER = {controls_state = 241}
+				GER = {controls_state = 224}
+				GER = {controls_state = 210}
+			}
+		}
+		cost = 10
+		fire_only_once = yes
+		icon = generic_army_support
+		complete_effect = {
+		    add_timed_idea = {
+			    idea = SOV_military_operation_idea
+				days = 30
+			}
+		}
+	}
+	
+	GER_operation_beowulf = {
+		available = {
+		    has_war_with = SOV
+			NOT = {has_idea = SOV_military_operation_idea}
+			NOT = {has_idea = fall_blau}
+			NOT = {has_idea = operation_citadel}
+			or = {
+			    GER = {controls_state = 190}
+				GER = {controls_state = 12}
+			}
+		}
+		cost = 10
+		fire_only_once = yes
+		icon = generic_army_support
+		complete_effect = {
+		    add_timed_idea = {
+			    idea = SOV_military_operation_idea
+				days = 30
+			}
+		}
+	}
+	
+	GER_operation_edelweiss = {
+		available = {
+		    has_war_with = SOV
+			NOT = {has_idea = SOV_military_operation_idea}
+			NOT = {has_idea = fall_blau}
+			NOT = {has_idea = operation_citadel}
+		    GER = {controls_state = 234}
+		}
+		cost = 10
+		fire_only_once = yes
+		icon = generic_army_support
+		complete_effect = {
+		    add_timed_idea = {
+			    idea = SOV_military_operation_idea
+				days = 30
+			}
+		}
+	}
+	
+	GER_operation_wintergewitter = {
+		available = {
+		    has_war_with = SOV
+			NOT = {has_idea = SOV_military_operation_idea}
+			NOT = {has_idea = fall_blau}
+			NOT = {has_idea = operation_citadel}
+		    SOV = {controls_state = 217}
+			GER = {controls_state = 238}
+		}
+		cost = 10
+		fire_only_once = yes
+		icon = generic_army_support
+		complete_effect = {
+		    add_timed_idea = {
+			    idea = SOV_military_operation_idea
+				days = 30
+			}
+		}
+	}
+	
+	GER_operation_feuerzauber = {
+		available = {
+		    has_war_with = SOV
+			NOT = {has_idea = SOV_military_operation_idea}
+			NOT = {has_idea = fall_blau}
+			NOT = {has_idea = operation_citadel}
+		    SOV = {controls_state = 195}
+			or = {
+			    GER = {controls_state = 208}
+			    GER = {controls_state = 244}
+			}
+		}
+		cost = 10
+		fire_only_once = yes
+		icon = generic_army_support
+		complete_effect = {
+		    add_timed_idea = {
+			    idea = SOV_military_operation_idea
+				days = 30
+			}
+		}
+	}
+	
+	GER_operation_trappenjagd = {
+		available = {
+		    has_war_with = SOV
+			NOT = {has_idea = SOV_military_operation_idea}
+			NOT = {has_idea = fall_blau}
+			NOT = {has_idea = operation_citadel}
+		    or = {
+			    GER = {controls_state = 137}
+				ROM = {controls_State = 137}
+				HUN = {controls_State = 137}
+			}
+		}
+		cost = 10
+		fire_only_once = yes
+		icon = generic_army_support
+		complete_effect = {
+		    add_timed_idea = {
+			    idea = SOV_military_operation_idea
+				days = 30
+			}
+		}
+	}
+}
+political_actions = {
+
+	annex_bulgaria = {
+		ai_will_do = { factor = 0 }
+		cost = 0
+		visible = {
+			tag = GER
+			BUL = { is_ai = yes }
+			country_exists = BUL
+			date > 1939.1.1
+			GER = { has_war = yes }		
+		}
+		fire_only_once = yes
+		complete_effect = {
+			GER = {
+				annex_country = { target = BUL transfer_troops = yes }
+				add_state_core = 77
+				add_state_core = 211
+				add_state_core = 212
+				add_state_core = 48
+				add_state_core = 184
+				add_state_core = 731
+				add_state_core = 106					
+			}
+		}
+	}
+
+	annex_hungary = {
+		ai_will_do = { factor = 0 }
+		cost = 0
+		visible = {
+			tag = GER
+			HUN = { is_ai = yes }
+			country_exists = HUN
+			date > 1939.1.1
+			GER = { has_war = yes }		
+		}
+		fire_only_once = yes
+		complete_effect = {
+			GER = {
+				annex_country = { target = HUN transfer_troops = yes }
+				add_state_core = 155
+				add_state_core = 154
+				add_state_core = 43			
+			}
+		}
+	}
+
+	Puppet_ROM = {
+		ai_will_do = { factor = 0 }
+		cost = 0
+		fire_only_once = yes
+		visible = {
+			tag = GER
+			ROM = { is_ai = yes }
+			country_exists = ROM
+			date > 1939.1.1
+			GER = { has_war = yes }		
+		}
+
+		complete_effect = {
+			GER = {
+				annex_country = { target = ROM transfer_troops = yes }
+				add_state_core = 78
+				add_state_core = 766
+				add_state_core = 79
+				add_state_core = 80
+				add_state_core = 46
+				add_state_core = 77
+				add_state_core = 76
+				add_state_core = 84
+				add_state_core = 81
+				add_state_core = 82
+				add_state_core = 83
+			}		
+		}
+	}
+
+	Operation_Margarethe = {
+		ai_will_do = { factor = 0 }
+		cost = 0
+		fire_only_once = yes
+		visible = {
+			tag = GER
+			HUN = { is_ai = yes }
+			country_exists = HUN
+			date > 1939.1.1
+			GER = { has_war = yes }		
+		}
+
+		complete_effect = {
+			GER = { puppet = HUN }
+		}
+	}
+}	
+	
+GER_mefo_bills_category = {
+
+	GER_mefo_bills_mission = {
+
+		allowed = { always = no }
+
+		icon = ger_mefo_bills
+
+		available = {
+			NOT = { has_government = democratic }
+			GER_can_delay_mefo_payment = yes
+			has_political_power > 0
+		}
+
+		#cost = GER_mefo_bill_counter?10
+
+		selectable_mission = yes
+		days_mission_timeout = 180
+		is_good = no
+		fire_only_once = yes
+
+		cancel_trigger = {
+			hidden_trigger = {
+				OR = {
+					NOT = { GER_has_mefo_bills = yes }
+					has_idea = GER_mefo_bills_ended
+				}
+			}
+		}
+
+		days_remove = GER_extend_mefo_bills_days?0
+		remove_effect = {
+			GER_mefo_bills_level_up = yes
+			if = {
+				limit = {
+					check_variable = { var = GER_mefo_bill_counter value = 15 compare = less_than }
+				}
+				set_variable = { var = GER_mefo_bill_counter value = 10 }
+			}
+			add_to_variable = { var = GER_mefo_bill_counter value = 10 }
+
+			hidden_effect = {
+				activate_mission = GER_mefo_bills_mission
+			}
+		}
+
+		complete_effect = {
+			custom_effect_tooltip = GER_mefo_bills_mission_tt
+			custom_effect_tooltip = GER_mefo_bills_effect_in_days
+			effect_tooltip = {
+				GER_mefo_bills_level_up = yes
+			}
+			hidden_effect = {
+				set_variable = { GER_extend_mefo_bills_days = days_mission_timeout@GER_mefo_bills_mission }
+			}
+		}
+
+		timeout_effect = {
+			GER_mefo_bills_level_up = yes
+			if = {
+				limit = {
+					check_variable = { var = GER_mefo_bill_counter value = 15 compare = less_than }
+				}
+				set_variable = { var = GER_mefo_bill_counter value = 10 }
+			}
+			add_to_variable = { var = GER_mefo_bill_counter value = 10 }
+
+			hidden_effect = {
+				activate_mission = GER_mefo_bills_mission
+			}		
+		}
+
+		ai_will_do = {
+			factor = 200
+		}
+	}
+}
+GER_endsieg_category = {
+    GER_deploy_schwerepanzerabteilung_divisions = {
+	    cost = 25
+		fire_only_once = yes
+		icon = ger_reichskommissariats
+		
+		available = {
+		    date > 1942.1.1
+			surrender_progress > 0.3
+		}
+	    complete_effect = {
+			hidden_effect = {
+					division_template = {
+						name = "Schwere Panzerabteilung"
+						priority = 2
+						division_names_group = ROM_INF_01
+						regiments = {
+							heavy_armor = { x = 0 y = 0 }
+							heavy_armor = { x = 0 y = 1 }
+							heavy_armor = { x = 0 y = 2 }
+				
+		    	   		 	heavy_armor = { x = 1 y = 0 }
+							heavy_armor = { x = 1 y = 1 }
+							heavy_armor = { x = 1 y = 2 }
+				
+		    	   		 	motorized = { x = 2 y = 0 }
+							motorized = { x = 2 y = 1 }
+							motorized = { x = 2 y = 2 }
+							motorized = { x = 2 y = 3 }
+						}
+						support = {
+							engineer = { x = 0 y = 0 }
+							recon = { x = 0 y = 1 }
+						}
+					}
+					
+				}
+				random_owned_controlled_state = {
+					limit = { ROOT = { has_full_control_of_state = PREV } }
+					prioritize = { 64 }
+					create_unit = {
+						division = "name = \"501st Heavy Panzer Battalion\" division_template = \"Schwere Panzerabteilung\" start_experience_factor = 1.0" 
+						owner = GER
+					}
+					create_unit = {
+						division = "name = \"502nd Heavy Panzer Battalion\" division_template = \"Schwere Panzerabteilung\" start_experience_factor = 1.0" 
+						owner = GER
+					}
+				}
+			}			
+	}
+	    GER_deploy_volkssturm_regiments = {
+	    icon = ger_reichskommissariats
+		cost = 25
+		fire_only_once = yes
+		available = {
+		    date > 1942.1.1
+			surrender_progress > 0.2
+		}
+		complete_effect = {
+		    hidden_effect = {
+			    division_template = {
+				    name = "Volkssturm Regiment"
+					priority = 2
+					division_names_group = ROM_INF_01
+					regiments = {
+					    infantry = { x = 0 y = 0}
+						infantry = { x = 0 y = 1}
+						infantry = { x = 0 y = 2}
+						
+						infantry = { x = 1 y = 0}
+						infantry = { x = 1 y = 1}
+						infantry = { x = 1 y = 2}
+						
+						infantry = { x = 2 y = 0}
+						infantry = { x = 2 y = 1}
+						infantry = { x = 2 y = 2}
+						infantry = { x = 2 y = 3}
+					}
+					support = {
+						engineer = { x = 0 y = 0 }
+						recon = { x = 0 y = 1 }
+					}
+				}
+			}
+			random_owned_controlled_state = {
+					limit = { ROOT = { has_full_control_of_state = PREV } }
+					prioritize = { 64 }
+					create_unit = {
+						division = "name = \"Volkssturm Regiment\" division_template = \"Volkssturm Regiment\" start_experience_factor = 1.0" 
+						owner = GER
+					}
+					create_unit = {
+						division = "name = \"Volkssturm Regiment\" division_template = \"Volkssturm Regiment\" start_experience_factor = 1.0" 
+						owner = GER
+					}
+					create_unit = {
+						division = "name = \"Volkssturm Regiment\" division_template = \"Volkssturm Regiment\" start_experience_factor = 1.0" 
+						owner = GER
+					}
+					create_unit = {
+						division = "name = \"Volkssturm Regiment\" division_template = \"Volkssturm Regiment\" start_experience_factor = 1.0" 
+						owner = GER
+					}
+					create_unit = {
+						division = "name = \"Volkssturm Regiment\" division_template = \"Volkssturm Regiment\" start_experience_factor = 1.0" 
+						owner = GER
+					}
+					create_unit = {
+						division = "name = \"Volkssturm Regiment\" division_template = \"Volkssturm Regiment\" start_experience_factor = 1.0" 
+						owner = GER
+					}
+					create_unit = {
+						division = "name = \"Volkssturm Regiment\" division_template = \"Volkssturm Regiment\" start_experience_factor = 1.0" 
+						owner = GER
+					}
+					create_unit = {
+						division = "name = \"Volkssturm Regiment\" division_template = \"Volkssturm Regiment\" start_experience_factor = 1.0" 
+						owner = GER
+					}
+					create_unit = {
+						division = "name = \"Volkssturm Regiment\" division_template = \"Volkssturm Regiment\" start_experience_factor = 1.0" 
+						owner = GER
+					}
+					create_unit = {
+						division = "name = \"Volkssturm Regiment\" division_template = \"Volkssturm Regiment\" start_experience_factor = 1.0" 
+						owner = GER
+					}
+					create_unit = {
+						division = "name = \"Volkssturm Regiment\" division_template = \"Volkssturm Regiment\" start_experience_factor = 1.0" 
+						owner = GER
+					}
+					create_unit = {
+						division = "name = \"Volkssturm Regiment\" division_template = \"Volkssturm Regiment\" start_experience_factor = 1.0" 
+						owner = GER
+					}
+					create_unit = {
+						division = "name = \"Volkssturm Regiment\" division_template = \"Volkssturm Regiment\" start_experience_factor = 1.0" 
+						owner = GER
+					}
+					create_unit = {
+						division = "name = \"Volkssturm Regiment\" division_template = \"Volkssturm Regiment\" start_experience_factor = 1.0" 
+						owner = GER
+					}
+					create_unit = {
+						division = "name = \"Volkssturm Regiment\" division_template = \"Volkssturm Regiment\" start_experience_factor = 1.0" 
+						owner = GER
+					}
+					create_unit = {
+						division = "name = \"Volkssturm Regiment\" division_template = \"Volkssturm Regiment\" start_experience_factor = 1.0" 
+						owner = GER
+					}
+					create_unit = {
+						division = "name = \"Volkssturm Regiment\" division_template = \"Volkssturm Regiment\" start_experience_factor = 1.0" 
+						owner = GER
+					}
+					create_unit = {
+						division = "name = \"Volkssturm Regiment\" division_template = \"Volkssturm Regiment\" start_experience_factor = 1.0" 
+						owner = GER
+					}
+					create_unit = {
+						division = "name = \"Volkssturm Regiment\" division_template = \"Volkssturm Regiment\" start_experience_factor = 1.0" 
+						owner = GER
+					}
+					create_unit = {
+						division = "name = \"Volkssturm Regiment\" division_template = \"Volkssturm Regiment\" start_experience_factor = 1.0" 
+						owner = GER
+					}
+			}
+		}
+	}
+	GER_deploy_ss_panzergrenadier_divisions = {
+	    cost = 25
+		fire_only_once = yes
+		icon = ger_reichskommissariats
+		
+		available = {
+		    date > 1942.1.1
+			surrender_progress > 0.15
+			
+		}
+	    complete_effect = {
+			hidden_effect = {
+					division_template = {
+						name = "SS Panzergrenadier Division"
+						priority = 2
+						division_names_group = ROM_INF_01
+						regiments = {
+							mechanized = { x = 0 y = 0 }
+							mechanized = { x = 0 y = 1 }
+							mechanized = { x = 0 y = 2 }
+				
+		    	   		 	mechanized = { x = 1 y = 0 }
+							mechanized = { x = 1 y = 1 }
+							mechanized = { x = 1 y = 2 }
+				
+		    	   		 	mechanized = { x = 2 y = 0 }
+							mechanized = { x = 2 y = 1 }
+							mechanized = { x = 2 y = 2 }
+							mechanized = { x = 2 y = 3 }
+						}
+						support = {
+							engineer = { x = 0 y = 0 }
+							recon = { x = 0 y = 1 }
+						}
+					}
+					
+				}
+				random_owned_controlled_state = {
+					limit = { ROOT = { has_full_control_of_state = PREV } }
+					prioritize = { 64 }
+					create_unit = {
+						division = "name = \"16. SS Panzergrenadier \" division_template = \"SS Panzergrenadier Division\" start_experience_factor = 1.0" 
+						owner = GER
+					}
+					create_unit = {
+						division = "name = \"17. SS Panzergrenadier \" division_template = \"SS Panzergrenadier Division\" start_experience_factor = 1.0" 
+						owner = GER
+					}
+					create_unit = {
+						division = "name = \"18. SS Panzergrenadier \" division_template = \"SS Panzergrenadier Division\" start_experience_factor = 1.0" 
+						owner = GER
+					}
+				}
+			}			
+	}
+}
+GER_case_anton_category = {
+
+	GER_case_anton = {
+	
+		icon = generic_operation
+
+
+		available = {
+			original_tag = ITA
+			has_government = fascism
+			any_country = {
+				original_tag = EFR
+				NOT = { has_country_flag = case_anton }
+			}
+			OR = { 
+				EFR = { has_war = yes } 
+				date > 1943.1.1
+				AND = {
+					date > 1941.6.1
+					ITA = { surrender_progress > 0.01 }				
+				}
+				AND = {
+					date > 1941.1.1
+					ITA = { surrender_progress > 0.25 }				
+				}				
+				OR = { 
+					FRA = {
+						controls_state = 19  
+						controls_state = 23  
+						controls_state = 30
+						controls_state = 14 
+						controls_state = 15 
+						controls_state = 29
+					}
+				} 
+			}
+		}
+
+		cost = 0
+		
+		days_remove = 10
+		
+		fire_only_once = yes
+
+		visible = {
+			original_tag = ITA
+			has_government = fascism
+		}
+		ai_will_do = {
+			factor = 1
+		}
+		
+		complete_effect = {
+				
+		}
+		
+		remove_effect = {
+			GER = {
+				annex_country = { target = EFR transfer_troops = no }
+			}			
+		}
+	}
+	
+}	
+	
+
+operations = {
+
+	GER_barbarossa_mission = {
+
+		icon = generic_operation
+
+		allowed = {
+			always = no
+			#added through on_action
+		}
+
+		available = {
+			219 = { is_controlled_by_ROOT_or_ally = yes }
+			195 = { is_controlled_by_ROOT_or_ally = yes }
+			202 = { is_controlled_by_ROOT_or_ally = yes }
+			217 = { is_controlled_by_ROOT_or_ally = yes }
+		}
+
+		days_mission_timeout = 180
+		fire_only_once = yes
+
+		activation = {
+
+		}
+
+		is_good = no
+
+		complete_effect = {
+			add_war_support = 0.1
+			custom_effect_tooltip = barbarossa_mission_tt
+		}
+
+		timeout_effect = {
+			
+		}
+
+		ai_will_do = {
+			factor = 1
+		}
+	}
+}
+
+GER_vemork_hydroelectric_plant_category = {
+
+    GER_jaegernotprogramm = {
+
+		icon = generic_air
+
+		available = {
+			has_war = yes
+			NOR = {NOT = {controls_state = 110} }
+			GRE = {NOT = {controls_state = 47} }
+			FRA = {NOT = {controls_state = 16} }
+		}
+
+		cost = 50
+		fire_only_once = yes
+		ai_will_do = {
+			factor = 1
+		}
+
+		visible = {
+			has_war = yes
+		}
+
+		complete_effect = {
+			add_timed_idea = { idea = GER_jaegernotprogramm days = 90 }
+		}
+	}
+
+    GER_seize_vemork_facility = {
+	    icon = generic_operation
+	    available = {
+		    original_tag = GER
+		    controls_state = 110
+		}
+	    cost = 25
+		fire_only_once = yes
+		complete_effect = {
+		    add_tech_bonus = {
+			    name = secret_bonus
+				bonus = 1.5
+				uses = 1
+				technology = nuclear_reactor
+			}
+		}
+	    remove_effect = {
+		    110 = {
+			    add_extra_state_shared_building_slots = 2
+			    add_building_construction = {
+			        type = nuclear_reactor
+			        level = 2
+			        instant_build = yes
+			    }
+			
+			}
+		}
+	    days_remove = 360
+	}
+	
+	GER_jet_experiments = {
+	    icon = generic_research
+		available = {
+		    original_tag = GER
+			date > 1942.1.1
+		}
+		cost = 25
+		fire_only_once = yes
+		remove_effect = {
+		    set_technology = { experimental_rockets = 1}
+			set_technology = { rocket_engines = 1}
+		}
+		days_remove = 180
+	}
+	
+	GER_me262_development = {
+	    icon = generic_research
+		available = {
+		    original_tag = GER
+			date > 1943.1.1
+			has_tech = rocket_engines
+		}
+		cost = 25
+		fire_only_once = yes
+		remove_effect = {
+		    set_technology = { jet_engines = 1}
+			set_technology = { jet_fighter1 = 1}
+		}
+		days_remove = 180
+	}
+	
+	SOV_develop_panther = {
+	    icon = generic_research
+		available = {
+		    date > 1941.1.1
+		}
+		cost = 10
+		fire_only_once = yes
+		complete_effect = {
+		    add_tech_bonus = {
+				bonus = 0.75
+				uses = 1
+				name = mech_army_bonus
+				technology = advanced_medium_tank
+				technology = advanced_heavy_tank
+			}
+		}
+		
+	}
+}
+
+special_projects = {
+ 	GER_focus_on_heavy_ship_production = {
+	
+	    icon = ger_reichskommissariats
+	
+	    cost = 0
+	
+	    fire_only_once = yes
+		
+		available = {
+		    always = yes
+		}
+		
+		visible = {
+		    original_tag = GER
+	    }
+		
+		complete_effect = {
+		add_ideas = GER_british_naval_dominance_challenged
+		}
+	}  
+}

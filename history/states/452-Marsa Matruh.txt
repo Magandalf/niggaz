@@ -1,0 +1,25 @@
+
+state={
+	id=452
+	name="STATE_452"
+	resources={
+		oil=10.000
+		rubber=5.000
+	}
+	manpower = 52556
+	
+	state_category = wasteland
+
+	history={
+		owner = ENG
+		buildings = {
+			infrastructure = 3
+		}
+
+	}
+
+	provinces={
+		12764 13224 13227 13229 13230 7079 9989 10061 11910 11967 5078 12033 12091 7148 13225 13226 13228 1143 4643
+	}
+
+}

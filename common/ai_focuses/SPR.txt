@@ -1,0 +1,9 @@
+
+ai_historical_focus_list_SPR = {
+	ai_national_focuses = {
+		SPR_prepare_for_opposition
+		SPR_post_depression_recovery
+		SPR_increase_public_investments
+		SPR_german_aid
+	}
+}

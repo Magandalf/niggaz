@@ -1,0 +1,273 @@
+﻿capital = 43
+
+oob = "HUN_1936"
+
+set_research_slots = 3
+set_stability = 0.7
+set_war_support = 0.6
+set_convoys = 50
+set_technology = {
+	building_tech = 1
+	superior_firepower = 1
+	infantry_weapons = 1
+	infantry_weapons1 = 1
+    motorised_infantry = 1
+	tech_support = 1		
+	tech_recon = 1
+	gw_artillery = 1
+	gwtank = 1
+	early_fighter = 1
+	CAS1 = 1
+	fuel_silos = 1
+	basic_light_tank = 1
+}
+add_ideas = general_staff
+if = {
+	limit = {
+		has_dlc = "Death or Dishonor"
+	}
+	add_ideas = {
+		disarmed_nation
+		HUN_treaty_of_triannon
+		HUN_eternal_regency
+	}
+}
+
+1939.1.1 = {
+}
+
+set_politics = {
+	ruling_party = neutrality
+	last_election = "1935.3.31"
+	election_frequency = 48
+	elections_allowed = yes
+}
+set_popularities = {
+	democratic = 25
+	fascism = 31
+	neutrality = 44
+}
+
+#Start Horty as neutral if DOD
+if = {
+	limit = {
+		has_dlc = "Death or Dishonor"
+	}
+	create_country_leader = {
+		name = "Miklós Horthy"
+		desc = "POLITICS_MIKLOS_HORTHY_DESC"
+		picture = "Portrait_Hungary_Miklos_Horthy.dds"
+		expire = "1965.1.1"
+		ideology = oligarchism
+		traits = {
+			fascist_sympathies
+			anti_communist
+		}
+		id = 500 #Horthy Neutral
+	}
+	else = {
+		create_country_leader = {
+			name = "Miklós Horthy"
+			desc = "POLITICS_MIKLOS_HORTHY_DESC"
+			picture = "Portrait_Hungary_Miklos_Horthy.dds"
+			expire = "1965.1.1"
+			ideology = despotism
+		}
+		create_country_leader = {
+			name = "Miklós Horthy"
+			desc = "POLITICS_MIKLOS_HORTHY_DESC"
+			picture = "Portrait_Hungary_Miklos_Horthy.dds"
+			expire = "1965.1.1"
+			ideology = fascism_ideology
+		}
+	}
+}
+
+create_country_leader = {
+	name = "Mátyás Rákosi"
+	desc = "POLITICS_MATYAS_RAKOSKI_DESC"
+	picture = "Portrait_Hungary_Matyas_Rakoski.dds"
+	expire = "1965.1.1"
+	ideology = stalinism
+	traits = {
+		#
+	}
+}
+
+create_country_leader = {
+	name = "Árpád Szakasits"
+	desc = "POLITICS_ARPAD_SZAKASITS_DESC"
+	picture = "gfx/leaders/Europe/Portrait_Europe_Generic_2.dds"
+	expire = "1965.1.1"
+	ideology = socialism
+	traits = {
+		#
+	}
+}
+
+1939.1.1 = {
+	if = {
+		limit = {
+			has_dlc = "Death or Dishonor"
+		}
+		#Remove neutral Horty add fascist
+		retire_country_leader = yes
+		create_country_leader = {
+			name = "Miklós Horthy"
+			desc = "POLITICS_MIKLOS_HORTHY_DESC"
+			picture = "Portrait_Hungary_Miklos_Horthy.dds"
+			expire = "1965.1.1"
+			ideology = fascism_ideology
+			traits = {
+				anti_communist
+			}
+			id = 503 #Horty fascist
+		}
+	}
+
+	set_politics = {
+		ruling_party = fascism
+		last_election = "1939.5.29"
+		election_frequency = 48
+		elections_allowed = yes
+	}
+	set_popularities = {
+		democratic = 27
+		fascism = 70
+		communism = 3
+	}
+}
+
+
+create_corps_commander = {
+	name = "Géza Lakatos"
+	gfx = GFX_Portrait_hungary_geza_lakatos
+	traits = { Cavalry_Leader trickster trait_engineer  }
+	skill = 4
+	attack_skill = 4
+	defense_skill = 4
+	planning_skill = 3
+	logistics_skill = 3
+}
+create_corps_commander = {
+	name = "Vilmos Roder"
+	picture = "Portrait_HUN_Vilmos_Roder.dds"
+	traits = { trait_mountaineer infantry_officer infantry_leader trickster trait_engineer }
+	skill = 4
+	attack_skill = 4
+	defense_skill = 4
+	planning_skill = 3
+	logistics_skill = 3
+}
+create_corps_commander = {
+	name = "Hugo Sonyi"
+	picture = "Portrait_HUN_Hugo_Sonyi.dds"
+	traits = { infantry_officer infantry_leader trickster trait_engineer desert_fox }
+	skill = 4
+	attack_skill = 4
+	defense_skill = 4
+	planning_skill = 3
+	logistics_skill = 3
+}
+create_corps_commander = {
+	name = "Vilmos Nagy de Nagybaczon"
+	picture = "Portrait_HUN_Vilmos_Nagy_de_Nagybaczon.dds"
+	traits = { ranger infantry_officer infantry_leader trickster trait_engineer  }
+	skill = 4
+	attack_skill = 4
+	defense_skill = 4
+	planning_skill = 3
+	logistics_skill = 3
+}
+create_corps_commander = {
+	name = "Janky Kocsard"
+	picture = "Portrait_HUN_Janky_Kocsard.dds"
+	traits = { trickster trait_engineer commando naval_invader }
+	skill = 4
+	attack_skill = 4
+	defense_skill = 4
+	planning_skill = 3
+	logistics_skill = 3
+}
+create_corps_commander = {
+	name = "Jany Gusztav"
+	picture = "Portrait_HUN_Jany_Gusztav.dds"
+	traits = { urban_assault_specialist infantry_officer infantry_leader trickster trait_engineer }
+	skill = 4
+	attack_skill = 4
+	defense_skill = 4
+	planning_skill = 3
+	logistics_skill = 3
+}
+create_corps_commander = {
+	name = "Gusztav Denk"
+	picture = "Portrait_HUN_Gusztav_Denk.dds"
+	traits = { hill_fighter infantry_officer infantry_leader trickster trait_engineer }
+	skill = 4
+	attack_skill = 4
+	defense_skill = 4
+	planning_skill = 3
+	logistics_skill = 3
+}
+create_corps_commander = {
+	name = "Iván Hindy"
+	gfx = GFX_Portrait_hungary_ivan_hindy
+	traits = { brilliant_strategist infantry_officer infantry_leader trickster trait_engineer }
+	skill = 4
+	attack_skill = 4
+	defense_skill = 4
+	planning_skill = 3
+	logistics_skill = 3
+}
+
+create_corps_commander = {
+	name = "Károly Beregfy"
+	gfx = GFX_Portrait_hungary_karoly_beregfy
+	traits = { infantry_officer infantry_leader trickster trait_engineer swamp_fox }
+	skill = 4
+	attack_skill = 4
+	defense_skill = 4
+	planning_skill = 3
+	logistics_skill = 3
+}
+
+create_corps_commander = {
+	name = "Lajos Veress"
+	gfx = GFX_Portrait_hungary_lajos_veress
+	traits = { panzer_leader panzer_expert trickster trait_engineer }
+	skill = 4
+	attack_skill = 4
+	defense_skill = 4
+	planning_skill = 3
+	logistics_skill = 3
+}
+create_field_marshal = {
+	name = "Szilard Bakay"
+	picture = "Portrait_HUN_Szilard_Bakay.dds"
+	traits = { offensive_doctrine infantry_officer infantry_leader trickster trait_engineer }
+	skill = 4
+	attack_skill = 5
+	defense_skill = 4
+	planning_skill = 3
+	logistics_skill = 3
+}
+create_field_marshal = {
+	name = "Ferenc Feketehalmy-Czeydner"
+	gfx = GFX_Portrait_hungary_ferenc_feketehalmy_czeydner
+	traits = { offensive_doctrine panzer_leader panzer_expert trickster trait_engineer}
+	skill = 4
+	attack_skill = 5
+	defense_skill = 4
+	planning_skill = 3
+	logistics_skill = 3
+}
+create_field_marshal = {
+	name = "Karoly Bartha"
+	picture = "Portrait_HUN_Karoly_Bartha.dds"
+	traits = { defensive_doctrine old_guard trickster inflexible_strategist }
+	skill = 4
+	attack_skill = 4
+	defense_skill = 5
+	planning_skill = 3
+	logistics_skill = 3
+}

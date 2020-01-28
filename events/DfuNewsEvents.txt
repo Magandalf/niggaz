@@ -1,0 +1,47 @@
+﻿###########################
+# News Events
+###########################
+
+add_namespace = dfu_news
+
+news_event = {
+	id = dfu_news.10
+	title = dfu_news.10.t
+	desc = dfu_news.10.desc
+	picture = GFX_news_event_stalin
+	
+	major = yes	
+	is_triggered_only = yes
+	
+	immediate = {
+	set_global_flag = stalin
+	hidden_effect = {
+		sound_effect = sovietfallen
+		}
+	}
+	
+	option = {
+		name = dfu_news.10.a
+	}
+
+}
+news_event = {
+	id = dfu_news.16
+	title = dfu_news.16.t
+	desc = dfu_news.16.desc
+	picture = GFX_news_iron
+	major = yes
+	is_triggered_only = yes
+	immediate = {
+	hidden_effect = {
+		set_global_flag = iron_guard_in_power2
+		sound_effect = iron	
+		}
+	}
+	
+	option = {
+		name = dfu_news.16.a
+		
+}
+}
+																						

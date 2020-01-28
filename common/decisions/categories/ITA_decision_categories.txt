@@ -1,0 +1,11 @@
+################
+##### FRA ######
+################
+
+
+ITA_diplomacy = {
+	
+	allowed = {
+		original_tag = ITA
+	}
+}

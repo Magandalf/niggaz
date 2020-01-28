@@ -1,0 +1,51 @@
+political_actions = {
+	
+	commander_decision = {
+		icon = generic_operation
+		fire_only_once = yes
+		
+		cost = 0
+		
+		fire_only_once = yes
+		
+		available = {
+			is_major = no
+			NOT = { tag = HUN }
+			NOT = { tag = ROM }
+		}
+		
+		visible = {
+			is_major = no
+			NOT = { tag = HUN }
+			NOT = { tag = ROM }
+		}
+		
+		complete_effect = {
+			country_event = { id = spot_commander_event.1 }
+		}
+	}
+	field_marshal_decision = {
+		icon = generic_operation
+		fire_only_once = yes
+		
+		cost = 0
+		
+		fire_only_once = yes
+		
+		available = {
+			is_major = no
+			NOT = { tag = HUN }
+			NOT = { tag = ROM }
+		}
+		
+		visible = {
+			is_major = no
+			NOT = { tag = HUN }
+			NOT = { tag = ROM }
+		}
+		
+		complete_effect = {
+			country_event = { id = spot_commander_event.1 }
+		}
+	}
+}

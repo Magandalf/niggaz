@@ -1,0 +1,98 @@
+﻿###########################
+# Finland Events
+###########################
+
+add_namespace = finland
+
+# Soviet Ultimatum
+country_event = {
+	id = finland.1
+	title = finland.1.t
+	desc = finland.1.d
+	picture = GFX_report_event_soviet_tanks_snow
+	
+	is_triggered_only = yes
+	
+	option = { # Refuse
+		name = finland.1.b
+		ai_chance = { factor = 75 }
+		SOV = {
+			country_event = { days = 5 id = soviet.13 }
+			effect_tooltip = {
+				create_wargoal = {
+					type = take_state
+					target = FIN
+					generator = { 146 }
+				}
+			}
+		}
+	}
+}
+
+#Soviet response to Finish surrender
+country_event = {
+	id = finland.8
+	title = finland.8.t
+	desc = finland.8.d
+	picture = GFX_report_event_finnish_soldiers_snow
+	
+	is_triggered_only = yes
+
+	#Accept surrender
+	option = {
+		name = finland.8.a
+		ai_chance = {
+			base = 9
+		}
+		white_peace = FIN
+		transfer_state = 146
+		transfer_state = 147
+		if = {
+			limit = {
+			NOT = { has_global_flag = LB_defend_moscow }
+			}
+			set_global_flag = LB_winter_war
+		}
+		if = {
+			limit = {
+				722 = {
+					is_claimed_by = SOV
+				}
+			}
+			remove_state_claim = 722
+		}
+		FIN = {
+			add_ai_strategy = {
+				type = antagonize
+				id = "SOV"			
+				value = 200
+			}
+		}
+		if = {
+			limit = {
+				GER = {
+					is_subject = no
+					not = { is_in_faction_with = SOV}
+				}
+			}
+			add_ai_strategy = {
+				type = alliance
+				id = "GER"			
+				value = 200
+			}
+			add_ai_strategy = {
+				type = befriend
+				id = "GER"			
+				value = 200
+			}
+			GER = {
+				add_ai_strategy = {
+					type = alliance
+					id = "FIN"			
+					value = 200
+				}
+			}
+		}
+	}
+
+}

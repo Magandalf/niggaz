@@ -1,0 +1,1091 @@
+on_actions = {
+	on_startup = {
+		effect = {
+			ITA = {
+				add_opinion_modifier = { target = GER modifier = huge_increase  }
+				add_opinion_modifier = { target = GER modifier = huge_increase  }
+				add_opinion_modifier = { target = GER modifier = huge_increase  }
+				add_opinion_modifier = { target = RAJ modifier = embargo }
+				add_opinion_modifier = { target = RAJ modifier = sanctions_relations }
+				add_opinion_modifier = { target = RAJ modifier = large_decrease }
+				add_opinion_modifier = { target = RAJ modifier = hostile_status }
+				}
+			CHI = {
+				add_opinion_modifier = { target = SIA modifier = embargo }
+				add_opinion_modifier = { target = SIA modifier = sanctions_relations }
+				add_opinion_modifier = { target = SIA modifier = large_decrease }
+				add_opinion_modifier = { target = SIA modifier = hostile_status }
+				}
+			YUG = {
+				add_opinion_modifier = { target = ITA modifier = embargo }
+				add_opinion_modifier = { target = ITA modifier = sanctions_relations }
+				add_opinion_modifier = { target = ITA modifier = large_decrease }
+				add_opinion_modifier = { target = ITA modifier = hostile_status }
+				}
+			AUS = {
+				add_opinion_modifier = { target = GER modifier = huge_increase  }
+				add_opinion_modifier = { target = GER modifier = huge_increase  }
+				add_opinion_modifier = { target = GER modifier = huge_increase  }
+				add_opinion_modifier = { target = RAJ modifier = embargo }
+				add_opinion_modifier = { target = RAJ modifier = sanctions_relations }
+				add_opinion_modifier = { target = RAJ modifier = large_decrease }
+				add_opinion_modifier = { target = RAJ modifier = hostile_status }
+				}
+			ROM = {
+				add_opinion_modifier = { target = GER modifier = huge_increase  }
+				add_opinion_modifier = { target = GER modifier = huge_increase  }
+				add_opinion_modifier = { target = GER modifier = huge_increase  }
+				add_opinion_modifier = { target = RAJ modifier = embargo }
+				add_opinion_modifier = { target = RAJ modifier = sanctions_relations }
+				add_opinion_modifier = { target = RAJ modifier = large_decrease }
+				add_opinion_modifier = { target = RAJ modifier = hostile_status }
+				}
+			BUL = {
+				add_opinion_modifier = { target = GER modifier = huge_increase  }
+				add_opinion_modifier = { target = GER modifier = huge_increase  }
+				add_opinion_modifier = { target = GER modifier = huge_increase  }
+				add_opinion_modifier = { target = RAJ modifier = embargo }
+				add_opinion_modifier = { target = RAJ modifier = sanctions_relations }
+				add_opinion_modifier = { target = RAJ modifier = large_decrease }
+				add_opinion_modifier = { target = RAJ modifier = hostile_status }
+				}
+			FIN = {
+				add_opinion_modifier = { target = GER modifier = huge_increase  }
+				add_opinion_modifier = { target = GER modifier = huge_increase  }
+				add_opinion_modifier = { target = GER modifier = huge_increase  }
+				add_opinion_modifier = { target = RAJ modifier = embargo }
+				add_opinion_modifier = { target = RAJ modifier = sanctions_relations }
+				add_opinion_modifier = { target = RAJ modifier = large_decrease }
+				add_opinion_modifier = { target = RAJ modifier = hostile_status }
+                add_opinion_modifier = { target = TUR modifier = embargo }
+                add_opinion_modifier = { target = TUR modifier = sanctions_relations }
+                add_opinion_modifier = { target = TUR modifier = large_decrease }
+                add_opinion_modifier = { target = TUR modifier = hostile_status }
+                add_opinion_modifier = { target = YUG modifier = embargo }
+                add_opinion_modifier = { target = YUG modifier = sanctions_relations }
+                add_opinion_modifier = { target = YUG modifier = large_decrease }
+                add_opinion_modifier = { target = YUG modifier = hostile_status }
+				}
+		if = { 
+			limit = { 
+				NOT = { has_global_flag = newzealand_started_ai } 
+				date < 1936.1.2
+				NZL = { is_ai = yes }
+			}
+			set_global_flag = newzealand_started_ai
+			AST = {	
+				annex_country = {
+					target = NZL
+				  }
+			   }
+			   AST = { add_state_core = 723 }
+			   AST = { add_state_core = 284 }
+			NZL = {
+		remove_state_core = 723
+		remove_state_core = 284
+				}
+			AST = { set_cosmetic_tag = FORM_AUST }
+			}
+		if = { 
+			limit = { 
+				NOT = { has_global_flag = bulgaria_started_ai } 
+				date < 1936.1.2
+				BUL = { is_ai = yes }
+			}
+			set_global_flag = bulgaria_started_ai
+			ROM = {	
+				annex_country = {
+					target = BUL
+				  }
+			   }
+			   ROM = { add_state_core = 211 }
+			   ROM = { add_state_core = 212 }
+			   ROM = { add_state_core = 48  }
+			BUL = {
+		remove_state_core = 211
+		remove_state_core = 212
+		remove_state_core = 48
+				}
+			211 = {
+					remove_building = {
+						type = industrial_complex
+						level = 3
+					}
+				}
+			48 = {
+					remove_building = {
+						type = industrial_complex
+						level = 3
+					}
+				}
+			212= {
+					remove_building = {
+						type = arms_factory
+						level = 1
+					}
+				}
+			}
+		}
+	}
+	#ROOT is new controller #FROM is old controller #FROM.FROM is state ID
+	on_state_control_changed = {
+		effect = {
+			if = {
+				limit = {
+					ROOT = {
+						tag = JAP
+					}
+					FROM.FROM = {
+						AND = {
+							NOT = { has_state_flag = rubber_state_transfered } 
+							OR = {
+								state = 623
+								state = 327
+								state = 625
+								state = 627
+								state = 333
+								state = 334
+								state = 672
+								state = 733
+								state = 422
+								state = 335
+								state = 667
+								state = 721
+								state = 673
+								state = 668
+								state = 669
+								state = 523
+								state = 737
+								state = 634
+								state = 635
+								state = 626
+								state = 628
+								state = 336
+								state = 624
+							}
+							USA = {
+								divisions_in_state = {
+									type = infantry
+									size < 1
+									state = FROM.FROM
+								}
+							}
+							AST = {
+								divisions_in_state = {
+									type = infantry
+									size < 1
+									state = FROM.FROM
+								}
+							}
+							RAJ = {
+								divisions_in_state = {
+									type = infantry
+									size < 1
+									state = FROM.FROM
+								}
+							}
+							SAF = {
+								divisions_in_state = {
+									type = infantry
+									size < 1
+									state = FROM.FROM
+								}
+							}
+							CAN = {
+								divisions_in_state = {
+									type = infantry
+									size < 1
+									state = FROM.FROM
+								}
+							}
+							ENG = {
+								divisions_in_state = {
+									type = infantry
+									size < 1
+									state = FROM.FROM
+								}
+							}
+							FRF = {
+								divisions_in_state = {
+									type = infantry
+									size < 1
+									state = FROM.FROM
+								}
+							}
+						}
+					}
+				}
+				FROM.FROM = {
+					set_state_flag = rubber_state_transfered
+				}
+				JAP = { set_state_controller = FROM.FROM }
+			}
+		}
+	}
+	on_state_control_changed = {
+		effect = {
+			if = {
+				limit = {
+					NOT = { has_global_flag = LB_defend_leningrad }					
+					date > 1936.1.1
+					OR = {
+						original_tag = GER
+						original_tag = ITA
+						original_tag = HUN
+						original_tag = ROM
+						original_tag = BUL
+						original_tag = FIN
+						original_tag = SPR					
+					}
+					OR = {
+						controls_state = 12
+						controls_state = 207
+						controls_state = 242				
+					}
+				}
+				SOV = {
+			195 = {
+			    add_building_construction = {
+                    type = anti_air_building
+                    level = 5
+                    instant_build = yes
+                }
+		        add_building_construction = {
+                    type = bunker
+                    level = 2
+                    instant_build = yes
+                    province = 6174
+                }
+				add_building_construction = {
+                    type = bunker
+                    level = 4
+                    instant_build = yes
+                    province = 3151
+                }
+				add_building_construction = {
+                    type = bunker
+                    level = 2
+                    instant_build = yes
+                    province = 149
+                }
+				add_building_construction = {
+                    type = bunker
+                    level = 2
+                    instant_build = yes
+                    province = 79
+                }
+			}
+			244 = {
+			    add_building_construction = {
+                    type = air_base
+                    level = 10
+                    instant_build = yes
+                }
+			    add_building_construction = {
+                    type = anti_air_building
+                    level = 3
+                    instant_build = yes
+                }
+		        add_building_construction = {
+                    type = bunker
+                    level = 2
+                    instant_build = yes
+                    province = 70
+                }
+				add_building_construction = {
+                    type = bunker
+                    level = 2
+                    instant_build = yes
+                    province = 6095
+                }
+				add_building_construction = {
+                    type = bunker
+                    level = 2
+                    instant_build = yes
+                    province = 6035
+                }
+				
+			}
+			263 = {
+			    add_building_construction = {
+                    type = air_base
+                    level = 8
+                    instant_build = yes
+                }
+			    add_building_construction = {
+                    type = anti_air_building
+                    level = 3
+                    instant_build = yes
+                }
+				add_building_construction = {
+                    type = bunker
+                    level = 2
+                    instant_build = yes
+                    province = 71
+                }
+				add_building_construction = {
+                    type = bunker
+                    level = 2
+                    instant_build = yes
+                    province = 117
+                }
+				add_building_construction = {
+                    type = bunker
+                    level = 2
+                    instant_build = yes
+                    province = 6154
+                }
+				add_building_construction = {
+                    type = bunker
+                    level = 2
+                    instant_build = yes
+                    province = 9212
+                }
+				add_building_construction = {
+                    type = bunker
+                    level = 2
+                    instant_build = yes
+                    province = 6225
+                }
+			}
+			    load_oob = "SOV_defend_leningrad"
+				set_global_flag = LB_defend_leningrad
+				}
+			}
+				
+		}
+	}
+    on_state_control_changed = {
+        effect = {
+            if = {
+                limit = {
+                    NOT = { has_global_flag = LB_winter_war }                 
+                    date > 1936.1.1
+                    SOV = {
+                    OR = {
+                        controls_state = 146
+                        controls_state = 150          
+                    	}
+                    }
+                }
+                set_global_flag = LB_winter_war
+                    SOV = {
+                        country_event = { id = finland.8 days = 7 }
+                        white_peace = FIN
+                        transfer_state = 146
+                        transfer_state = 147
+                    }
+            }
+                
+        }
+    }
+	on_state_control_changed = {
+		effect = {
+			if = {
+				limit = {
+					NOT = { has_global_flag = LB_defend_moscow }					
+					date > 1936.1.1
+					OR = {
+						original_tag = GER
+						original_tag = ITA
+						original_tag = HUN
+						original_tag = ROM
+						original_tag = BUL
+						original_tag = FIN
+						original_tag = SPR					
+					}
+					OR = {
+						controls_state = 243
+						controls_state = 224
+						controls_state = 222
+					}
+				}
+				SOV = {
+        add_war_support = 0.15
+        add_equipment_to_stockpile = { type = infantry_equipment_1 amount = 20000 producer = SOV }
+	    219 = {
+			    add_building_construction = {
+                    type = anti_air_building
+                    level = 5
+                    instant_build = yes
+                }
+		        add_building_construction = {
+                    type = bunker
+                    level = 2
+                    instant_build = yes
+                    province = 6414
+                }
+		        add_building_construction = {
+                    type = bunker
+                    level = 2
+                    instant_build = yes
+                    province = 9302
+                }
+		        add_building_construction = {
+                    type = bunker
+                    level = 2
+                    instant_build = yes
+                    province = 11282
+                }
+				add_building_construction = {
+                    type = bunker
+                    level = 2
+                    instant_build = yes
+                    province = 301
+                }
+				add_building_construction = {
+                    type = bunker
+                    level = 5
+                    instant_build = yes
+                    province = 6380
+                }
+				add_building_construction = {
+                    type = bunker
+                    level = 2
+                    instant_build = yes
+                    province = 6348
+                }
+				add_building_construction = {
+                    type = bunker
+                    level = 2
+                    instant_build = yes
+                    province = 6290
+                }
+				add_building_construction = {
+                    type = bunker
+                    level = 2
+                    instant_build = yes
+                    province = 3327
+                }
+				add_building_construction = {
+                    type = bunker
+                    level = 2
+                    instant_build = yes
+                    province = 9282
+                }
+				add_building_construction = {
+                    type = bunker
+                    level = 2
+                    instant_build = yes
+                    province = 9348
+                }
+				add_building_construction = {
+                    type = bunker
+                    level = 2
+                    instant_build = yes
+                    province = 366
+                }
+				add_building_construction = {
+                    type = bunker
+                    level = 2
+                    instant_build = yes
+                    province = 401
+                }
+				add_building_construction = {
+                    type = bunker
+                    level = 2
+                    instant_build = yes
+                    province = 350
+                }
+				add_building_construction = {
+                    type = bunker
+                    level = 2
+                    instant_build = yes
+                    province = 11330
+                }
+			}
+			246 = {
+			    add_building_construction = {
+                    type = air_base
+                    level = 10
+                    instant_build = yes
+                }
+				add_building_construction = {
+                    type = anti_air_building
+                    level = 3
+                    instant_build = yes
+                }
+		        add_building_construction = {
+                    type = bunker
+                    level = 2
+                    instant_build = yes
+                    province = 11349
+                }
+				add_building_construction = {
+                    type = bunker
+                    level = 2
+                    instant_build = yes
+                    province = 9265
+                }
+				add_building_construction = {
+                    type = bunker
+                    level = 2
+                    instant_build = yes
+                    province = 11224
+                }
+				add_building_construction = {
+                    type = bunker
+                    level = 2
+                    instant_build = yes
+                    province = 9242
+                }
+				add_building_construction = {
+                    type = bunker
+                    level = 2
+                    instant_build = yes
+                    province = 11326
+                }
+				add_building_construction = {
+                    type = bunker
+                    level = 2
+                    instant_build = yes
+                    province = 6303
+                }
+			}
+			247 = {
+			    add_building_construction = {
+                    type = air_base
+                    level = 8
+                    instant_build = yes
+                }
+				add_building_construction = {
+                    type = anti_air_building
+                    level = 3
+                    instant_build = yes
+                }
+				add_building_construction = {
+                    type = bunker
+                    level = 2
+                    instant_build = yes
+                    province = 6245
+                }
+				add_building_construction = {
+                    type = bunker
+                    level = 2
+                    instant_build = yes
+                    province = 6122
+                }
+			}
+			223 = {
+			    add_building_construction = {
+                    type = anti_air_building
+                    level = 3
+                    instant_build = yes
+                }
+				add_building_construction = {
+                    type = bunker
+                    level = 2
+                    instant_build = yes
+                    province = 6396
+                }
+				add_building_construction = {
+                    type = bunker
+                    level = 2
+                    instant_build = yes
+                    province = 6262
+                }
+				add_building_construction = {
+                    type = bunker
+                    level = 2
+                    instant_build = yes
+                    province = 11347
+                }
+				add_building_construction = {
+                    type = bunker
+                    level = 2
+                    instant_build = yes
+                    province = 3236
+                }
+				add_building_construction = {
+                    type = bunker
+                    level = 2
+                    instant_build = yes
+                    province = 9366
+                }
+				add_building_construction = {
+                    type = bunker
+                    level = 2
+                    instant_build = yes
+                    province = 3292
+                }
+				add_building_construction = {
+                    type = bunker
+                    level = 2
+                    instant_build = yes
+                    province = 6333
+                }
+			}
+			254 = {
+			    add_building_construction = {
+                    type = air_base
+                    level = 5
+                    instant_build = yes
+                }
+				add_building_construction = {
+                    type = anti_air_building
+                    level = 3
+                    instant_build = yes
+                }
+				add_building_construction = {
+                    type = bunker
+                    level = 2
+                    instant_build = yes
+                    province = 11248
+                }				
+				add_building_construction = {
+                    type = bunker
+                    level = 2
+                    instant_build = yes
+                    province = 11314
+                }
+				add_building_construction = {
+                    type = bunker
+                    level = 2
+                    instant_build = yes
+                    province = 283
+                }
+				add_building_construction = {
+                    type = bunker
+                    level = 2
+                    instant_build = yes
+                    province = 397
+                }
+			}
+			    load_oob = "SOV_defend_moscow"
+				set_global_flag = LB_defend_moscow
+				}
+			}
+				
+		}
+	}
+	on_state_control_changed = {
+		effect = {
+			if = {
+				limit = {
+					NOT = { has_global_flag = LB_defend_stalingrad }					
+					date > 1936.1.1
+					OR = {
+						original_tag = GER
+						original_tag = ITA
+						original_tag = HUN
+						original_tag = ROM
+						original_tag = BUL
+						original_tag = FIN
+						original_tag = SPR					
+					}
+					OR = {
+						controls_state = 218
+						controls_state = 228
+						controls_state = 234
+					}
+				}
+				SOV = {
+		    217 = {
+			    add_building_construction = {
+                    type = air_base
+                    level = 9
+                    instant_build = yes
+                }
+				add_building_construction = {
+                    type = anti_air_building
+                    level = 3
+                    instant_build = yes
+                }
+				add_building_construction = {
+                    type = bunker
+                    level = 4
+                    instant_build = yes
+                    province = 3529
+                }
+				add_building_construction = {
+                    type = bunker
+                    level = 2
+                    instant_build = yes
+                    province = 498
+                }
+				add_building_construction = {
+                    type = bunker
+                    level = 2
+                    instant_build = yes
+                    province = 6503
+                }
+				add_building_construction = {
+                    type = bunker
+                    level = 2
+                    instant_build = yes
+                    province = 3555
+                }
+				add_building_construction = {
+                    type = bunker
+                    level = 2
+                    instant_build = yes
+                    province = 11484
+                }
+				add_building_construction = {
+                    type = bunker
+                    level = 2
+                    instant_build = yes
+                    province = 11474
+                }
+				add_building_construction = {
+                    type = bunker
+                    level = 2
+                    instant_build = yes
+                    province = 520
+                }
+				add_building_construction = {
+                    type = bunker
+                    level = 2
+                    instant_build = yes
+                    province = 9504
+                }
+				add_building_construction = {
+                    type = bunker
+                    level = 2
+                    instant_build = yes
+                    province = 6527
+                }
+				add_building_construction = {
+                    type = bunker
+                    level = 2
+                    instant_build = yes
+                    province = 9474
+                }
+				add_building_construction = {
+                    type = bunker
+                    level = 2
+                    instant_build = yes
+                    province = 6575
+                }
+				add_building_construction = {
+                    type = bunker
+                    level = 2
+                    instant_build = yes
+                    province = 11395
+                }				
+			}
+			236 = {
+			    add_building_construction = {
+                    type = air_base
+                    level = 9
+                    instant_build = yes
+                }
+				add_building_construction = {
+                    type = anti_air_building
+                    level = 3
+                    instant_build = yes
+                }
+				add_building_construction = {
+                    type = bunker
+                    level = 2
+                    instant_build = yes
+                    province = 9753
+                }
+				add_building_construction = {
+                    type = bunker
+                    level = 2
+                    instant_build = yes
+                    province = 757
+                }
+				add_building_construction = {
+                    type = bunker
+                    level = 2
+                    instant_build = yes
+                    province = 6620
+                }
+				add_building_construction = {
+                    type = bunker
+                    level = 2
+                    instant_build = yes
+                    province = 11429
+                }
+				add_building_construction = {
+                    type = bunker
+                    level = 2
+                    instant_build = yes
+                    province = 9455
+                }
+				add_building_construction = {
+                    type = bunker
+                    level = 2
+                    instant_build = yes
+                    province = 6486
+                }
+				add_building_construction = {
+                    type = bunker
+                    level = 2
+                    instant_build = yes
+                    province = 6516
+                }				
+			}
+			265 = {
+			    add_building_construction = {
+                    type = air_base
+                    level = 5
+                    instant_build = yes
+                }
+				add_building_construction = {
+                    type = anti_air_building
+                    level = 3
+                    instant_build = yes
+                }
+				add_building_construction = {
+                    type = bunker
+                    level = 2
+                    instant_build = yes
+                    province = 487
+                }
+				add_building_construction = {
+                    type = bunker
+                    level = 2
+                    instant_build = yes
+                    province = 11527
+                }
+				add_building_construction = {
+                    type = bunker
+                    level = 2
+                    instant_build = yes
+                    province = 3582
+                }
+				add_building_construction = {
+                    type = bunker
+                    level = 2
+                    instant_build = yes
+                    province = 6454
+                }
+				add_building_construction = {
+                    type = bunker
+                    level = 2
+                    instant_build = yes
+                    province = 487
+                }
+				add_building_construction = {
+                    type = bunker
+                    level = 2
+                    instant_build = yes
+                    province = 11555
+                }
+				add_building_construction = {
+                    type = bunker
+                    level = 2
+                    instant_build = yes
+                    province = 3431
+                }
+			}
+			    load_oob = "SOV_defend_stalingrad"
+				set_global_flag = LB_defend_stalingrad
+				}
+			}
+				
+		}
+	}
+	on_declare_war = {
+	effect = {
+			if = {
+				limit = {
+				ROOT = { tag = GER }				
+				FROM = { tag = BEL }
+				}
+			ENG = { add_to_faction = BEL }
+			ENG = { transfer_state = 295 transfer_state = 718 transfer_state = 538 transfer_state = 768 transfer_state = 769 }	
+			}
+			if = {
+				limit = {
+				ROOT = { tag = GER }				
+				FROM = { tag = HOL }
+				}
+			ENG = { add_to_faction = HOL }
+			}
+			if = {
+				limit = {			
+				FROM = { tag = GRE }
+				}
+			ENG = { add_to_faction = GRE }
+			}
+		if = {
+				limit = {
+				date < 1942.1.1			
+				FROM = { tag = SOV }
+                has_global_flag = fall_of_allies_lb
+                NOT = { has_global_flag = barbarossa_started_LB_axis_buff  }
+				}
+				sound_effect = girlsundpanzer
+	    		GER = {
+	     				add_timed_idea = { 
+		    idea = GER_crusade_on_bolshevism 
+		    days = 120
+	   			 }	
+			}
+	ROM = {
+		    add_timed_idea = { 
+		    idea = GER_crusade_on_bolshevism 
+		    days = 120
+	    }
+		}
+		HUN = {
+		    add_timed_idea = { 
+		    idea = GER_crusade_on_bolshevism 
+		    days = 120
+	    }
+		}
+		SPR = {
+		    add_timed_idea = { 
+		    idea = GER_crusade_on_bolshevism 
+		    days = 120
+	    }
+		}
+		ITA = {
+		    add_timed_idea = { 
+		    idea = GER_crusade_on_bolshevism 
+		    days = 120
+		    		}
+	    		}
+	    		set_global_flag = barbarossa_started_LB_axis_buff
+	    }
+			if = {
+				limit = {
+				date < 1942.1.1			
+				FROM = { tag = SOV }
+				NOT = { has_global_flag = barbarossa_started_LB }
+                NOT = { has_global_flag = fall_of_allies_lb  }
+				}
+			set_global_flag = barbarossa_started_LB
+		sound_effect = girlsundpanzer
+				SOV = {
+		add_timed_idea = { 
+		    idea = SOV_army_in_chaos
+		    days = 30
+		}
+	    add_timed_idea = { 
+		    idea = SOV_lack_of_officers 
+		    days = 120
+	    }
+	   add_timed_idea = { 
+		    idea = SOV_disorganized_airforce
+		    days = 120
+		    		}
+	    		}
+	    		GER = {
+	     				add_timed_idea = { 
+		    idea = GER_crusade_on_bolshevism 
+		    days = 120
+	   			 }	
+			}
+	ROM = {
+		    add_timed_idea = { 
+		    idea = GER_crusade_on_bolshevism 
+		    days = 120
+	    }
+		}
+		HUN = {
+		    add_timed_idea = { 
+		    idea = GER_crusade_on_bolshevism 
+		    days = 120
+	    }
+		}
+		SPR = {
+		    add_timed_idea = { 
+		    idea = GER_crusade_on_bolshevism 
+		    days = 120
+	    }
+		}
+		ITA = {
+		    add_timed_idea = { 
+		    idea = GER_crusade_on_bolshevism 
+		    days = 120
+		    		}
+	    		}
+			}
+		}
+	}
+	on_state_control_changed = {
+		effect = {
+			if = {
+				limit = {				
+					NOT = { has_global_flag = ENG_lost_cairo }
+					OR = {
+						original_tag = GER
+						original_tag = ITA
+						original_tag = HUN
+						original_tag = ROM
+						original_tag = BUL
+						original_tag = FIN
+						original_tag = SPR
+					}
+					OR = {
+						controls_state = 446
+
+
+					}
+				}
+				hidden_effect = {
+				456 = {
+					damage_building = {
+						type = infrastructure
+						damage = 4
+					}
+				}
+					set_global_flag = ENG_lost_cairo
+				}
+			}			
+		}
+	}
+
+
+	on_peaceconference_ended = {
+		effect = {
+			if = { 
+				limit = {
+				NOT = { has_global_flag = fall_of_yugoslavia } 
+						OR = { 
+							102 = { is_controlled_by = ITA } 
+							792 = { is_controlled_by = ITA }
+							109 = { is_controlled_by = ITA } 
+							106 = { is_controlled_by = ITA }
+							103 = { is_controlled_by = ITA }
+							45 =  { is_controlled_by = ITA }
+							764 = { is_controlled_by = ITA }
+							108 = { is_controlled_by = ITA }
+							107 = { is_controlled_by = ITA }
+							105 = { is_controlled_by = ITA }							
+						}					
+				}
+			set_global_flag = fall_of_yugoslavia
+		GER = {
+		    transfer_state = 102
+			add_state_core = 102
+		    transfer_state = 792
+			add_state_core = 792
+		}
+			if = { 
+				limit = {
+				has_global_flag = trans1
+				}
+						HUN = {
+			transfer_state = 764
+			add_state_core = 764
+							}
+						}
+			if = { 
+				limit = {
+				NOT = { has_global_flag = trans1 } 
+				}
+		ROM = {
+			transfer_state = 764
+			add_state_core = 764
+			}
+		}
+		add_resource = {
+				type = tungsten
+				amount = 70
+				state = 102
+		}
+		add_resource = {
+				type = tungsten
+				amount = -70
+				state = 104
+		    }
+	  }
+	}
+  }
+}

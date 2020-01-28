@@ -1,0 +1,469 @@
+on_actions = {
+	
+
+	on_startup = {
+		effect = {
+					SPR = { 
+				country_event = { id = spain.10 days = 195 } 
+			}
+		if = { 
+			limit = { 
+				NOT = { has_global_flag = airbase_list_created } 
+			}
+			set_global_flag = airbase_list_created 
+			add_to_array = { global.mini_airbase_list = 457 } #eastern desert, Uk		
+            ## Andachal land airfield
+            add_to_array = { global.small_airbase_list = 434 } #Andachal-tibet-china-india contested zone,Contested zone 
+
+			###Pacific Islands###
+
+			add_to_array = { global.small_airbase_list = 647 } #Palau, JAP 
+			add_to_array = { global.small_airbase_list = 633 } #Marshall Islands, JAP 
+			add_to_array = { global.small_airbase_list = 639 } #Gilbert Islands, UK 
+			add_to_array = { global.small_airbase_list = 725 } #Nauru, AST 
+			add_to_array = { global.small_airbase_list = 643 } #Ellice Islands, UK 
+			add_to_array = { global.small_airbase_list = 734 } #Nendo, France 
+			add_to_array = { global.small_airbase_list = 726 } #Samoa, NZL 
+			add_to_array = { global.small_airbase_list = 642 } #Phoenix Island, USA 
+			add_to_array = { global.small_airbase_list = 727 } #Line islands, USA 
+			add_to_array = { global.small_airbase_list = 641 } #Tahiti, FRA 
+			add_to_array = { global.small_airbase_list = 270 } #Pitcairn Island, UK 
+			add_to_array = { global.small_airbase_list = 630 } #Johnston Atoll, USA 
+			add_to_array = { global.small_airbase_list = 631 } #Midway Island, USA 
+			add_to_array = { global.small_airbase_list = 632 } #Wake Island, USA 
+			add_to_array = { global.small_airbase_list = 648 } #Marcus Island, JAP 
+			add_to_array = { global.small_airbase_list = 555 } #Kuril Islands, JAP
+			add_to_array = { global.small_airbase_list = 650 } #Attu Island, USA 
+			add_to_array = { global.small_airbase_list = 684 } #Caroline islands, JAP, LglobalE chain
+			add_to_array = { global.small_airbase_list = 794 } #Yap Islands, JAP, used to be part of 684 in mod 
+			add_to_array = { global.small_airbase_list = 798 } #Truk Islands, JAP, used to be part of 684 in mod
+
+			add_to_array = { global.medium_airbase_list = 646 } #Saipan, JAP, Small Island
+			add_to_array = { global.medium_airbase_list = 638 } #Guam, USA,
+			add_to_array = { global.medium_airbase_list = 636 } #Fiji, UK
+
+			###Indian Ocean###
+		
+			add_to_array = { global.small_airbase_list = 733 } #Andaman, UK 
+			add_to_array = { global.small_airbase_list = 712 } #Cocos, UK 
+			add_to_array = { global.small_airbase_list = 711 } #Christmas Island, UK 
+			add_to_array = { global.small_airbase_list = 710 } #Diego Garcia, UK 
+			add_to_array = { global.small_airbase_list = 281 } #Maldives, UK 
+			add_to_array = { global.small_airbase_list = 709 } #Seychelles, UK 
+			add_to_array = { global.small_airbase_list = 707 } #Mauritius, UK 
+			add_to_array = { global.small_airbase_list = 706 } #Reunion, FRA 
+			add_to_array = { global.small_airbase_list = 708 } #Comoros, FRA 
+			add_to_array = { global.small_airbase_list = 713 } #Kerguelen, FRA
+
+			add_to_array = { global.medium_airbase_list = 765 } #Quatar, UK
+
+			###Atlantic###
+		
+			add_to_array = { global.small_airbase_list = 704 } #Saint Helena, UK 
+			add_to_array = { global.small_airbase_list = 703 } #Ascension, UK 
+			add_to_array = { global.small_airbase_list = 299 } #Falklands, UK 
+			add_to_array = { global.small_airbase_list = 720 } #South Georgia, UK 
+			add_to_array = { global.small_airbase_list = 702 } #Cape Verde, POR 
+			add_to_array = { global.small_airbase_list = 178 } #Canary Islands, SPR 
+			add_to_array = { global.small_airbase_list = 696 } #Bermuda, UK 
+			add_to_array = { global.small_airbase_list = 337 } #Faroes, DEN-UK
+
+			add_to_array = { global.medium_airbase_list = 698 } #Azores, POR
+
+			###Caribbean###
+		
+			add_to_array = { global.small_airbase_list = 690 } #Bahamas, UK 
+			add_to_array = { global.small_airbase_list = 693 } #Southern Bahamas, UK 
+			add_to_array = { global.small_airbase_list = 689 } #Jamaica, UK 
+			add_to_array = { global.small_airbase_list = 692 } #Windward Islands, UK
+			add_to_array = { global.small_airbase_list = 691 } #Trinidad, UK 
+			add_to_array = { global.small_airbase_list = 695 } #Curacao, HOL
+			add_to_array = { global.small_airbase_list = 308 } #Leeward Islands, UK 
+			add_to_array = { global.small_airbase_list = 694 } #French Caribbean, FRA 
+			add_to_array = { global.small_airbase_list = 686 } #Puerto Rico, USA
+
+			#Initializing the global.medium_airbase_list array# 
+	
+			### Philippines ### 
+		
+			add_to_array = { global.medium_airbase_list = 327 } #Manila, PHI 
+			add_to_array = { global.medium_airbase_list = 623 } #Luzon, PHI 
+			add_to_array = { global.medium_airbase_list = 624 } #Central Islands, PHI 
+			add_to_array = { global.medium_airbase_list = 628 } #Cebu, PHI 
+			add_to_array = { global.medium_airbase_list = 625 } #Samar, PHI 
+			add_to_array = { global.medium_airbase_list = 627 } #Mindanao, PHI 
+			add_to_array = { global.medium_airbase_list = 626 } #Palawan, PHI 
+
+			### Home Islands of Japan ### 
+		
+			add_to_array = { global.medium_airbase_list = 645 } #Iwo Jima, JAP 
+		
+			#### Borneo sucks. It's a jungle, mostly. ####
+		
+			add_to_array = { global.medium_airbase_list = 333 } #North Borneo, UK 
+			add_to_array = { global.medium_airbase_list = 334 } #Kalimantan, INS--->UK 
+			add_to_array = { global.medium_airbase_list = 793 } #Borneo Jungle, INS--->UK (should not be built on anyway, just to make sure though)
+
+			#### New Guinea sucks, but is very big so you can build 3 airbases on it. ####
+		
+			add_to_array = { global.medium_airbase_list = 669 } #West Papua, INS--->AST 
+			add_to_array = { global.medium_airbase_list = 523 } #Papua, AST 
+			add_to_array = { global.medium_airbase_list = 792 } #Central Papua, AST, should not be built in anyway. 
+			add_to_array = { global.medium_airbase_list = 634 } #Soloman Islands, AST 
+			add_to_array = { global.medium_airbase_list = 737 } #Bismarck, AST
+
+			#### Madagascar. May be relevant one day, who knows... ####
+		
+			add_to_array = { global.medium_airbase_list = 543 } #Madagascar, FRA
+
+			#### East Indies #### 
+		
+			add_to_array = { global.medium_airbase_list = 672 } #Sumatra, INS--->UK 
+			add_to_array = { global.medium_airbase_list = 335 } #Java, INS--->UK 
+			add_to_array = { global.medium_airbase_list = 673 } #Sulawesi, INS---> UK 
+			add_to_array = { global.medium_airbase_list = 668 } #Moluccas, INS---> UK
+
+			#### Aru Islands ####
+		
+			add_to_array = { global.medium_airbase_list = 738 } #Aru Islands, INS ---> AST
+
+			#### Timor ####
+		
+			add_to_array = { global.medium_airbase_list = 721 } #Portuguese Timor, POR----> UK 
+			add_to_array = { global.medium_airbase_list = 667 } #Lesser Sunda Islands, INS---> UK
+
+			#### Caledonia #### 
+		
+			add_to_array = { global.medium_airbase_list = 635 } #New Caledonia, FRA
+
+			#### Panama #### 
+		
+			add_to_array = { global.medium_airbase_list = 685 } #Panama Canal, USA (oh yeah I did)
+
+			### EUROPE ###
+			add_to_array = { global.small_airbase_list = 145 } #Aland, FIN
+			}
+		}
+	}
+	#THIS IS THE AIRBASE LIMITER. 
+	on_daily = { 
+		effect = {
+			 if = {
+                limit = {
+                NOT = { has_global_flag = airbase_limiter_ran } 
+				}
+				for_each_scope_loop = {
+					array = global.mini_airbase_list
+					if = {
+						limit = { 
+							air_base > 1
+						}
+						remove_building = { 
+							type = air_base 
+							level = 1 
+						}
+						controller = { 
+							PREV = { save_event_target_as = GDU_badairport1 } 
+							country_event = { id = gduairlimiter.1 }
+						}
+					}
+			
+				}
+				for_each_scope_loop = {
+					array = global.small_airbase_list
+					if = {
+						limit = { 
+							air_base > 2
+						}
+						remove_building = { 
+							type = air_base 
+							level = 1 
+						}
+						controller = { 
+							PREV = { save_event_target_as = GDU_badairport1 } 
+							country_event = { id = gduairlimiter.1 }
+						}
+					}
+			
+				}
+				for_each_scope_loop = {
+					array = global.medium_airbase_list
+					if = {
+						limit = { 
+							air_base > 4
+						}
+						remove_building = { 
+							type = air_base 
+							level = 1 
+						}
+						controller = { 
+							PREV = { save_event_target_as = GDU_badairport2 } 
+							country_event = { id = gduairlimiter.2 }
+						}
+					}
+			
+				}
+				set_global_flag = { flag = airbase_limiter_ran value = 1 days = 1 }
+			}	
+		}
+	}	
+	on_declare_war = {
+		effect = {
+			if = {
+				limit = {
+					NOT = { has_global_flag = GDU_Battle_Of_France_Missions_Activated }
+					OR = {
+						AND = {
+							FROM = {
+								tag = BEL 
+							}
+							ROOT = { tag = GER }
+						}
+						AND = {
+							FROM = {
+								tag = FRA 
+							}
+							ROOT = { tag = ITA }
+						}						
+					}	
+				}
+				hidden_effect = {
+					GER = {
+						activate_mission = GER_triumph_france1
+						activate_mission = GER_triumph_france2
+						activate_mission = GER_triumph_france3
+						activate_mission = GER_triumph_france4
+						activate_mission = GER_triumph_france5
+						activate_mission = GER_triumph_france6
+						activate_mission = GER_triumph_france7
+						activate_mission = GER_triumph_france8
+						activate_mission = GER_triumph_france9
+						activate_mission = GER_triumph_france10					
+					}
+					FRA = { 
+						activate_mission = FRA_evacuate_france1
+						activate_mission = FRA_evacuate_france2
+						activate_mission = FRA_evacuate_france3
+						activate_mission = FRA_evacuate_france4
+						activate_mission = FRA_evacuate_france5
+						activate_mission = FRA_evacuate_france6
+						activate_mission = FRA_evacuate_france7
+						activate_mission = FRA_evacuate_france8
+						activate_mission = FRA_evacuate_france9
+						activate_mission = FRA_evacuate_france10						
+					}
+					set_global_flag = GDU_Battle_Of_France_Missions_Activated
+				}
+			}
+		}
+		
+	}
+	on_capitulation = {
+		effect = {			
+			if = {
+				limit = {
+					tag = HOL
+				}
+				set_global_flag = GDU_HOL_capitulated
+				HOL = { 
+					transfer_navy = { 
+						target = AST 
+					}
+				}
+				HOL = { 					country_event = { id = gduannexations.3 days = 10 }  }
+			}
+		}
+	}
+			# When Norway capitulates, UK annexes it and gets its troops/navy #
+	on_capitulation = {
+		effect = {	
+			if = {
+				limit = {
+					tag = POL
+				}
+				set_global_flag = GDU_POL_capitulated
+				POL = { 
+					transfer_navy = { 
+						target = CAN 
+					}
+				}
+				POL = { country_event = { id = gduannexations.8 days = 10 }  }			}				
+		}
+	}
+	on_capitulation = {
+		effect = {			
+			if = {
+				limit = {
+					tag = NOR
+				}
+				set_global_flag = GDU_NOR_capitulated
+				NOR = { 
+					transfer_navy = { 
+						target = AST
+					}
+				}
+				NOR = { 					country_event = { id = gduannexations.5 days = 10 }  }			}					
+		}
+	}
+	on_capitulation = {
+		effect = {		
+			if = {
+				limit = {
+					tag = BEL
+				}
+				set_global_flag = GDU_BEL_capitulated
+				BEL = { 
+					transfer_navy = { 
+						target = CAN 
+					}
+				}
+				BEL = { 					country_event = { id = gduannexations.1 days = 10 }  }
+			}
+		}
+	}
+			# When Denmark capitulates, UK annexes it and gets its troops/navy #
+
+	on_capitulation = {
+		effect = {			
+			if = {
+				limit = {
+					tag = DEN
+				}
+				set_global_flag = GDU_DEN_capitulated
+				DEN = { 
+					transfer_navy = { 
+						target = AST
+					}
+				}
+				DEN = { 					country_event = { id = gduannexations.4 days = 10 }  }			}						
+		}
+	}
+
+	on_capitulation = {
+		effect = {			
+			if = {
+				limit = {
+					tag = GRE
+					NOT = { has_global_flag = GDU_GRE_capitulated }					
+				}
+				set_global_flag = GDU_GRE_capitulated
+				
+
+								
+				ITA = {
+					transfer_state = 185
+					transfer_state = 186									
+					}				
+				
+				GRE = { 
+					transfer_navy = { 
+						target = AST 
+					}
+				}										
+				
+				GRE = { 					country_event = { id = gduannexations.6 days = 10 }  }			}					
+		}
+	}
+
+	on_state_control_changed = {
+		effect = {
+			if = {
+				limit = {
+					NOT = { has_global_flag = GDU_SOV_Danger_To_Heartland }					
+					date < 1942.1.1
+					OR = {
+						original_tag = GER
+						original_tag = ITA
+						original_tag = HUN
+						original_tag = ROM
+						original_tag = FIN
+						original_tag = SPR
+						original_tag = BUL					
+					}
+					OR = {
+						controls_state = 245
+						controls_state = 234
+						controls_state = 218
+						controls_state = 260
+						controls_state = 223
+						controls_state = 246
+						controls_state = 263
+						controls_state = 205
+						controls_state = 258
+						controls_state = 210
+					}
+				}
+				hidden_effect = {
+					SOV = {
+					add_timed_idea = { idea = GDU_SOV_Danger_To_Heartland  days = 180 }		
+					}
+					set_global_flag = GDU_SOV_Danger_To_Heartland
+				}
+			}
+				
+		}
+	}	
+
+	#### Make the Battle of France Missions activate if France loses a state, even if somehow Germany has not declared war on Belgium. Failsafe to stop people from getting around it by avoiding declaring war on Belgium in various ways. ####
+	
+	on_state_control_changed = {
+		effect = {
+		
+			if = {
+				limit = {
+					NOT = { has_global_flag = GDU_Battle_Of_France_Missions_Activated }
+					OR = {
+						original_tag = GER
+						original_tag = ITA
+						original_tag = HUN
+						original_tag = ROM
+						original_tag = FIN
+						original_tag = SPR
+						original_tag = BUL				
+					}
+					OR = {
+						FROM.FROM = {
+							is_core_of = FRA
+						}
+						FROM.FROM = {
+							is_core_of = BEL
+						}
+						FROM.FROM = {
+							is_core_of = HOL
+						}
+						FROM.FROM = {
+							is_core_of = LUX
+						}						
+					}
+				}
+				hidden_effect = {
+					GER = {
+						activate_mission = GER_triumph_france1
+						activate_mission = GER_triumph_france2
+						activate_mission = GER_triumph_france3
+						activate_mission = GER_triumph_france4
+						activate_mission = GER_triumph_france5
+						activate_mission = GER_triumph_france6
+						activate_mission = GER_triumph_france7
+						activate_mission = GER_triumph_france8
+						activate_mission = GER_triumph_france9
+						activate_mission = GER_triumph_france10					
+					}
+					FRA = { 
+						activate_mission = FRA_evacuate_france1
+						activate_mission = FRA_evacuate_france2
+						activate_mission = FRA_evacuate_france3
+						activate_mission = FRA_evacuate_france4
+						activate_mission = FRA_evacuate_france5
+						activate_mission = FRA_evacuate_france6
+						activate_mission = FRA_evacuate_france7
+						activate_mission = FRA_evacuate_france8
+						activate_mission = FRA_evacuate_france9
+						activate_mission = FRA_evacuate_france10						
+					}
+					set_global_flag = GDU_Battle_Of_France_Missions_Activated
+				} 
+			}			
+		}
+	}
+}

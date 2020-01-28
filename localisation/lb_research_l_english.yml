@@ -1,0 +1,11 @@
+﻿l_english:
+   air_infra2:0 "Airbase II"
+ air_infra2_desc:0 "Modernizing our tools and equipment will further aid our construction efforts to construct airbases at a higher speed."
+   air_infra:0 "Airbase I"
+ air_infra_desc:0 "Improved methods and materials allow us to construct airbases faster."
+ impassible_line:0 "Impassable Line"
+ impassible_line_desc:0 "Layers upon layers of well positioned artillery units and anti-aircraft guns will not only improve the defensive capabilities of our immediate frontlines, but will give our soldiers some respite to rest and improve the cohesion of our defence."
+ sss:0 "Commerce Raiding"
+ sss_desc:0 "Commerce raiding is a form of naval warfare used to destroy or disrupt logistics of the enemy on the open sea by attacking its merchant shipping, rather than engaging its combatants or enforcing a blockade against them."
+ home_defense:0 "Home Defense"
+ home_defense_desc:0 "Spotters on the ground as well as detection and listening posts work in concert with our air force to track and destroy enemy incursions."

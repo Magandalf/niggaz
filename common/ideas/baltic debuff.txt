@@ -1,0 +1,33 @@
+ideas = {
+
+country = {
+
+		baltic_debuff = {
+			allowed = {
+				always = no
+			}
+			
+			allowed_civil_war = {
+				has_government = democratic
+			}
+			
+			removal_cost = -1
+
+			picture = generic_pp_unity_bonus
+			
+
+			modifier = {
+            	enemy_justify_war_goal_time = 5.0
+				research_speed_factor = -5.0
+				join_faction_tension = 2.00
+				lend_lease_tension = 2.00
+				send_volunteers_tension = 2.00
+				political_power_gain = -2
+				ai_get_ally_desire_factor = -200
+                conscription_factor = -1
+				production_speed_buildings_factor = -0.90
+				industrial_capacity_factory = -5
+				industrial_capacity_dockyard = -5
+			}
+		}
+}

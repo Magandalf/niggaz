@@ -1,0 +1,35 @@
+﻿###########################
+# LB News Events
+###########################
+
+add_namespace = lbnews
+
+
+news_event = {
+	id = lbnews.3
+	title = lbnews.1.title
+	desc = lbnews.1.desc
+	picture = GFX_news_event_german_officers
+	
+
+	is_triggered_only = yes
+	
+	immediate = {
+	hidden_effect = {
+				POL = { 
+					transfer_navy = { 
+						target = AST
+						}
+				}
+		}
+   }
+  	option = {
+		name = news.336.a
+						ENG = {
+					annex_country = {
+						target = POL
+						transfer_troops = yes
+					}
+				}
+	}
+}

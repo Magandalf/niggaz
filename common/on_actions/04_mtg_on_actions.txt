@@ -1,0 +1,75 @@
+on_actions = {
+	on_nuke_drop = {
+		effect = {			
+			if = {
+				limit = {
+					tag = USA
+					FROM = {
+						state = 16
+					}
+				}
+				set_country_flag = achievement_team_america
+			}
+		}
+	}
+
+	# FROM is the sinker, ROOT is the owner of the ship being sunk
+	on_pride_of_the_fleet_sunk = {
+		effect = {
+			if = {
+				limit = {
+					tag = ENG
+				}
+				FROM = { set_country_flag = achievements_pride_and_extreme_prejudice }
+			}
+		}
+	}
+
+	on_leave_faction = {
+		effect = {
+			if = {
+				limit = { 
+					original_tag = HOL
+					has_country_flag = HOL_joined_germany_flag
+				}
+				FROM = {
+					create_wargoal = {
+						type = take_state_focus
+						target = ROOT
+						generator = { 7 }
+					}
+				}
+			}
+		}
+	}
+
+	# ROOT is the new faction leader FROM is the old faction leader
+	on_assume_faction_leadership = {
+		effect = {
+			if = {
+				limit = {
+					FROM = {
+						OR = {
+							tag = GER
+							tag = ENG
+							tag = SOV
+						}
+					}
+					NOT = {
+						OR = {
+							tag = USA
+							tag = ENG
+							tag = GER
+							tag = ITA
+							tag = FRA
+							tag = SOV
+							tag = JAP
+							tag = CHI
+						}
+					}
+				}
+				set_country_flag = assuming_direct_control_achievement_flag
+			}
+		}
+	}
+}

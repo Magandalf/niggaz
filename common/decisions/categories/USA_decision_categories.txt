@@ -1,0 +1,52 @@
+################
+##### USA ######
+################
+
+
+
+USA_atlantic_campaign = {
+    picture = GFX_decision_cat_generic_usarmy
+	icon = generic_democracy
+	allowed = {
+	    original_tag = USA
+	}
+	visible = {
+	    has_war = yes
+	}	
+}
+
+USA_pacific_campaign = {
+    picture = GFX_decision_cat_generic_usapacific
+	icon = generic_democracy
+	allowed = {
+	    original_tag = USA
+	}
+	visible = {
+	    has_war = yes
+	}	
+}
+
+
+USA_aid_britain = {
+
+	allowed = {
+		original_tag = USA
+	}
+	visible = {
+		ENG = {
+			has_war = yes
+			has_government = ROOT
+		}
+	}
+}
+
+USA_congress = {
+	icon = usa_congress
+	allowed = {
+		original_tag = USA
+	}
+
+	priority = 85
+}
+
+

@@ -1,0 +1,68 @@
+﻿###########################
+# Canadian TFV events Events
+###########################
+
+add_namespace = tfv_canada
+add_namespace = canada_vanilla
+
+
+country_event = {
+	id = tfv_canada.3
+	title = tfv_canada.3.t	#
+	desc = tfv_canada.3.d	#
+	picture = GFX_report_event_king_speech
+	
+	is_triggered_only = yes
+	
+	option = {
+		name = tfv_canada.3.a
+	}
+}
+
+
+country_event = {
+	id = tfv_canada.12
+	title = tfv_canada.12.t	#
+	desc = tfv_canada.12.d	#
+	picture = GFX_report_event_generic_rally_3
+	
+	is_triggered_only = yes
+	
+	option = {
+		name = tfv_canada.12.a
+	}
+}
+
+
+country_event = {
+	id = tfv_canada.42
+	title = tfv_canada.42.t
+	desc = tfv_canada.42.desc
+	picture = GFX_report_event_american_hunger_march
+	
+	is_triggered_only = yes
+	
+	option = {
+		name = tfv_canada.42.a
+		
+	}
+}
+
+
+# Ronnie the Bren Gun Girl
+# Triggered by Women in the Workforce decision
+
+country_event = {
+	id = canada_vanilla.1
+	title = canada_vanilla.1.title
+	desc = canada_vanilla.1.desc
+	
+	picture = GFX_report_event_canada_ronnie
+
+	is_triggered_only = yes
+
+	option = {
+		name = canada_vanilla.1.opt
+	}
+}
+

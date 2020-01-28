@@ -1,0 +1,43 @@
+ideas = {
+	
+	country = {
+
+	}
+
+	political_advisor = {
+
+	}	
+
+	army_chief = {
+
+	}
+
+	air_chief = {
+
+	}
+
+	navy_chief = {
+		
+
+	}
+
+
+	high_command = {
+
+	}
+
+
+
+	theorist = {
+
+	}
+
+	aircraft_manufacturer = {
+		designer = yes
+
+	}
+	industrial_concern = {
+	}
+
+
+}

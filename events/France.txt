@@ -1,0 +1,452 @@
+﻿###########################
+# French Events
+###########################
+
+add_namespace = france
+
+# Japan demands Indochina
+country_event = {
+	id = france.1
+	title = france.1.t
+	desc = france.1.d
+	picture = GFX_report_event_japan_army_mountainside
+
+	is_triggered_only = yes
+
+	option = { # Accept demands
+		name = france.1.a
+		ai_chance = {
+			factor = 25
+			modifier = {
+				factor = 50
+				has_war = yes
+				any_enemy_country = {
+					strength_ratio = {
+						tag = ROOT
+						ratio < 0.4
+					}
+				}
+			}
+			modifier = {
+				factor = 75
+				16 = { NOT = { is_controlled_by = FRA } } #Paris
+			}
+		}
+		JAP = {
+			country_event = { days = 5 id = japan.6 }
+		}
+	}
+}
+
+# Maginot Line Extension
+country_event = {
+	id = france.2
+	title = france.2.t
+	desc = france.2.d
+	picture = GFX_report_event_bunker_01
+
+	is_triggered_only = yes
+
+	option = {
+		name = france.2.a
+		18 = {
+			add_building_construction = {
+				type = bunker
+				province = 5291
+				level = 2
+				instant_build = yes
+			}
+			add_building_construction = {
+				type = bunker
+				province = 3560
+				level = 2
+				instant_build = yes
+			}
+			add_building_construction = {
+				type = bunker
+				province = 9472
+				level = 2
+				instant_build = yes
+			}
+		}
+		29 = {
+			add_building_construction = {
+				type = bunker
+				province = 11606
+				level = 2
+				instant_build = yes
+			}
+			add_building_construction = {
+				type = bunker
+				province = 11483
+				level = 2
+				instant_build = yes
+			}
+			add_building_construction = {
+				type = bunker
+				province = 575
+				level = 2
+				instant_build = yes
+			}
+		}
+			785 = {
+			add_building_construction = {
+				type = bunker
+				province = 3447
+				level = 2
+				instant_build = yes
+			}
+		}
+	}
+}
+
+# Alpine Line Extension
+country_event = {
+	id = france.3
+	title = france.3.t
+	desc = france.3.d
+	picture = GFX_report_event_bunker_01
+
+	is_triggered_only = yes
+
+	option = {
+		name = france.3.a
+		735 = {
+			add_building_construction = {
+				type = bunker
+				province = 764
+				level = 2
+				instant_build = yes
+			}
+			add_building_construction = {
+				type = bunker
+				province = 9909
+				level = 2
+				instant_build = yes
+			}
+			add_building_construction = {
+				type = bunker
+				province = 3959
+				level = 2
+				instant_build = yes
+			}
+			add_building_construction = {
+				type = bunker
+				province = 6975
+				level = 2
+				instant_build = yes
+			}
+			add_building_construction = {
+				type = bunker
+				province = 3764
+				level = 2
+				instant_build = yes
+			}
+			add_building_construction = {
+				type = bunker
+				province = 9745
+				level = 2
+				instant_build = yes
+			}
+			add_building_construction = {
+				type = bunker
+				province = 778
+				level = 2
+				instant_build = yes
+			}
+		}
+	}
+}
+
+### The Fall of France
+
+# Invitation to French Faction
+country_event = {
+	id = france.17
+	title = france.17.t
+	desc = france.17.d
+	picture = GFX_report_event_worried_french
+
+	is_triggered_only = yes
+
+	option = {
+		name = france.17.a
+		ai_chance = { factor = 90 }
+		FRA = {
+			country_event = france.18
+			add_to_faction = ROOT
+		}
+		add_ai_strategy = {
+			type = alliance
+			id = "FRA"
+			value = 200
+		}
+	}
+
+	option = {
+		name = france.17.b
+		ai_chance = { factor = 10 }
+		FRA = { country_event = france.19 }
+	}
+}
+
+# [Country] Accepts
+country_event = {
+	id = france.18
+	title = france.18.t
+	desc = france.18.d
+	picture = GFX_report_event_soldiers_in_france
+
+	is_triggered_only = yes
+
+	option = {
+		name = france.18.a
+		effect_tooltip = {
+			add_to_faction = FROM
+		}
+	}
+}
+
+# [Country] Refuses
+country_event = {
+	id = france.19
+	title = france.19.t
+	desc = france.19.d
+	picture = GFX_report_event_finnish_letter
+
+	is_triggered_only = yes
+
+	option = {
+		name = france.19.a
+	}
+}
+
+# De Gaulle becomes leader
+country_event = {
+	id = france.20
+	title = france.20.t
+	desc = france.20.d
+	picture = GFX_report_event_degaulle_churchill
+
+	is_triggered_only = yes
+
+	option = {
+
+		custom_effect_tooltip = france.20.a_tt
+		set_country_flag = france_de_gaulle
+		remove_ideas = FRA_victors_of_wwi
+		remove_ideas = FRA_disjointed_government
+		remove_ideas = FRA_protected_by_the_maginot_line
+		add_timed_idea = { idea = FRF_efficiency_gain days = 100 }
+		add_timed_idea = { idea = FRF_retrain days = 200 }
+		hidden_effect =  {
+			retire_country_leader = yes
+			add_political_power = 1200
+			army_experience = 500
+			air_experience = 125
+			navy_experience = 100 
+			add_equipment_to_stockpile = { type = infantry_equipment_1 amount = 8000 producer = FRF }
+			add_equipment_to_stockpile = { type = infantry_equipment_2 amount = 2000 producer = FRF }
+
+			add_equipment_to_stockpile = { type = anti_air_equipment_1 amount = 500 producer = FRF }
+			add_equipment_to_stockpile = { type = anti_air_equipment_2 amount = 150 producer = FRF }
+			
+			add_equipment_to_stockpile = { type = artillery_equipment_1 amount = 800 producer = FRF }
+			add_equipment_to_stockpile = { type = artillery_equipment_2 amount = 200 producer = FRF }			
+
+			add_equipment_to_stockpile = { type = anti_tank_equipment_1 amount = 500 producer = FRF }
+			add_equipment_to_stockpile = { type = anti_tank_equipment_1 amount = 150 producer = FRF }
+
+			add_equipment_to_stockpile = { type = motorized_equipment_1 amount = 1000 producer = FRF }
+			add_equipment_to_stockpile = { type = support_equipment_1 amount = 1000 producer = FRF }
+
+			add_equipment_to_stockpile = { type = heavy_tank_equipment_1 amount = 100 producer = FRF }
+			add_equipment_to_stockpile = { type = light_tank_equipment_1 amount = 100 producer = FRF }
+			add_equipment_to_stockpile = { type = medium_tank_equipment_1 amount = 100 producer = FRF }
+			add_equipment_to_stockpile = { type = gw_tank_equipment amount = 600 producer = FRF }
+			add_equipment_to_stockpile = { type = light_tank_equipment_2 amount = 50 producer = FRF }
+			
+			add_equipment_to_stockpile = { type = transport_plane_equipment amount = 5 producer = FRF }	
+			
+		}
+		if = {
+			limit = { FRA = { has_global_flag = FRA_evacuated1 } }
+			load_oob = FRF_naval_oob
+		}
+		name = france.20.a
+	}
+}
+
+# French strikes
+country_event = {
+	id = france.21
+	title = france.21.t
+	desc = france.21.d
+	picture = GFX_report_event_worker_protests
+
+	trigger = {
+		NOT = { has_government = communism }
+		tag = FRA
+		date > 1936.4.1
+		date < 1938.1.1
+	}
+
+	fire_only_once = yes
+
+	mean_time_to_happen = {	days = 60	}
+
+	option = {
+		ai_chance = {
+			base = 15
+		}
+		name = france.21.a
+		add_timed_idea = {
+			idea = FRA_factory_strikes
+			days = 90
+		}
+		set_country_flag = france.21.a_chosen
+	}
+	option = {
+		ai_chance = {
+			base = 85
+		}
+		name = france.21.b
+		add_timed_idea = {
+			idea = FRA_matignon_agreements
+			days = 365
+		}
+		add_popularity = {
+			ideology = communism
+			popularity = 0.07
+		}
+	}
+}
+# Revoke Worker rights
+country_event = {
+	id = france.22
+	title = france.22.t
+	desc = france.22.d
+	picture = GFX_report_event_airplane_factory
+
+	trigger = {
+		NOT = { has_government = communism }
+		has_idea = FRA_matignon_agreements
+		date > 1936.7.1
+	}
+
+	fire_only_once = yes
+
+	mean_time_to_happen = {	days = 90	}
+	option = {
+		ai_chance = {
+			factor = 2
+		}
+		add_stability = 0.05
+		name = france.22.a
+	}
+	option = {
+		name = france.22.b
+		ai_chance = {
+			factor = 10
+			modifier = {
+				factor = 0
+				communism > 0.4
+			}
+		}
+		remove_ideas =  FRA_matignon_agreements
+		add_popularity = {
+			ideology = communism
+			popularity = 0.05
+		}
+	}
+}
+# Strikes are over
+country_event = {
+	id = france.23
+	title = france.23.t
+	desc = france.23.d
+	picture = GFX_report_event_airplane_factory
+
+
+	trigger = {
+		NOT = { has_idea = FRA_factory_strikes }
+		has_country_flag = france.21.a_chosen
+	}
+
+	fire_only_once = yes
+
+	mean_time_to_happen = {	days = 2	}
+
+	option = {
+		name = france.23.a
+	}
+}
+
+# French ban on communism
+country_event = {
+	id = france.24
+	title = france.24.t
+	desc = france.24.d
+	picture = GFX_report_event_molotov_ribentrop_handshake
+
+
+	trigger = {
+		tag = FRA
+		SOV = { has_government = communism }
+		has_government = democratic
+		communism < 0.5
+		has_global_flag = sov_yes_pact
+	}
+
+	fire_only_once = yes
+
+	mean_time_to_happen = {	days = 2	}
+
+	option = {
+		ai_chance = {	factor = 10 }
+		add_political_power = -20
+		name = france.24.a
+		add_popularity = {
+			ideology = communism
+			popularity = -0.3
+		}
+		add_ideas = FRA_communism_banned
+
+		add_opinion_modifier = {
+			target = SOV
+			modifier = FRA_ban_communism
+		}
+
+		every_other_country = {
+			limit = {
+				has_government = communism
+			}
+			add_opinion_modifier = {
+				target = FRA
+				modifier = FRA_ban_communism
+			}
+		}
+		hidden_effect = {
+			news_event = { id = news.161 hours = 6 }
+		}
+
+	}
+	option = {
+		ai_chance = {	factor = 0 }
+		name = france.24.b
+	}
+}
+
+# France - Britain accepts Ally request
+country_event = {
+	id = france.29
+	title = france.29.t
+	desc = france.29.d
+	picture = GFX_report_event_sign_treaty2
+
+	is_triggered_only	= yes
+
+	option = {
+		name = france.29.a
+	}
+}

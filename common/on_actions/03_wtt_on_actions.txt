@@ -1,0 +1,17 @@
+on_actions = {
+
+	#ROOT is winner #FROM is loser
+	on_peaceconference_ended = {
+		effect = {
+			if = {
+				limit = {
+					original_tag = FRA
+					owns_state = 28
+				}
+				28 = { set_state_name = STATE_28 }
+				set_province_name = { id = 9503 name = VICTORY_POINTS_9503 }
+				set_province_name = { id = 678 name = VICTORY_POINTS_678 }
+			}
+		}
+	}
+}

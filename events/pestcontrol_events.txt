@@ -1,0 +1,117 @@
+add_namespace = pestcontrol
+
+##Event: Stalin Line Broken
+country_event = {
+	id = pestcontrol.1
+	title = pestcontrol.1.title
+	desc = pestcontrol.1.desc
+	picture = GFX_/hoi4/event_gfx/report_event_soviet_tanks
+	fire_only_once = yes
+	trigger = {
+		original_tag = ENG
+SOV = { surrender_progress > 0.10 }
+SOV = { has_war_with = GER }
+	}
+	option = {
+		name = pestcontrol.1.a
+		ai_chance = { factor = 1}
+		add_ideas = European_theater_1
+USA = {
+
+add_ideas = European_theater_1
+	}
+
+AST = {
+
+add_ideas = European_theater_1
+	}
+RAJ = {
+
+add_ideas = European_theater_1
+	}
+SAF = {
+
+add_ideas = European_theater_1
+	}
+CAN = {
+
+add_ideas = European_theater_1
+	}
+  }
+}
+##Event: Soviet-Axis Balance
+country_event = {
+	id = pestcontrol.2
+	title = pestcontrol.2.title
+	desc = pestcontrol.2.desc
+	picture = GFX_/hoi4/event_gfx/report_event_soviet_tanks
+	fire_only_once = yes
+	trigger = {
+		original_tag = ENG
+SOV = { surrender_progress > 0.24 }
+SOV = { has_war_with = GER }
+	}
+	option = {
+		name = pestcontrol.2.a
+		ai_chance = { factor = 1}
+USA = {
+
+add_ideas = European_theater_1
+	}
+
+AST = {
+
+add_ideas = European_theater_1
+	}
+RAJ = {
+
+add_ideas = European_theater_1
+	}
+SAF = {
+
+add_ideas = European_theater_1
+	}
+CAN = {
+
+add_ideas = European_theater_1
+	}
+  }
+}
+##Event: Soviet Union nearly to capitulation
+country_event = {
+	id = pestcontrol.3
+	title = pestcontrol.3.title
+	desc = pestcontrol.3.desc
+	picture = GFX_/hoi4/event_gfx/report_event_soviet_tanks
+	fire_only_once = yes
+	trigger = {
+		original_tag = ENG
+SOV = { surrender_progress > 0.34 }
+SOV = { has_war_with = GER }
+	}
+	option = {
+		name = pestcontrol.3.a
+		ai_chance = { factor = 1}
+USA = {
+
+add_ideas = European_theater_1
+	}
+
+AST = {
+
+add_ideas = European_theater_1
+	}
+RAJ = {
+
+add_ideas = European_theater_1
+	}
+SAF = {
+
+add_ideas = European_theater_1
+	}
+CAN = {
+
+add_ideas = European_theater_1
+	}
+  }
+}

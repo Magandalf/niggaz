@@ -1,0 +1,209 @@
+﻿###########################
+# Events DFU
+###########################
+
+add_namespace = dfu
+
+country_event = {
+id = dfu.30
+	title = dfu.30.t
+	desc = dfu.30.d
+	picture = GFX_report_event_soviet_tank_parade
+	fire_only_once = yes
+	is_triggered_only = yes
+
+    trigger = {
+
+    }
+	immediate = {
+	set_global_flag = burger1
+	}
+	option = {
+		name = dfu.30.a
+		HUN = {country_event = { id =  dfu.31 }}
+	}
+		option = {
+		name = dfu.30.b
+		HUN = {country_event = { id =  dfu.32 }}
+	}
+}
+country_event = {
+id = dfu.31
+	title = dfu.31.t
+	desc = dfu.31.d
+	picture = GFX_report_event_soviet_tank_parade
+	fire_only_once = yes
+	is_triggered_only = yes
+
+    trigger = {
+	
+    }
+
+	immediate = {
+	set_global_flag = burger2
+	}
+		option = {
+		name = dfu.31.a
+	}
+}
+country_event = {
+id = dfu.32
+	title = dfu.32.t
+	desc = dfu.32.d
+	picture = GFX_report_event_soviet_tank_parade
+	fire_only_once = yes
+	is_triggered_only = yes
+
+    trigger = {
+
+    }
+
+	immediate = {
+	set_global_flag = burger2
+	set_global_flag = burger3
+	}
+		option = {
+		name = dfu.32.a
+		HUN = { transfer_state = 791 }
+		GER = {
+		remove_state_core = 791
+		}
+		HUN = { add_state_core = 791 }
+	}
+}
+#Hungary demands transylvania - agree?
+country_event = {
+id = dfu.33
+	title = dfu.33.t
+	desc = dfu.33.d
+	picture = GFX_report_event_soviet_tank_parade
+	fire_only_once = yes
+	is_triggered_only = yes
+
+    trigger = {
+
+    }
+
+	immediate = {
+	
+	}
+	option = {#yes
+		name = dfu.33.a
+			if = { 
+				limit = {
+				has_global_flag = fall_of_yugoslavia
+				}
+		remove_state_core = 83
+		remove_state_core = 84
+		remove_state_core = 82
+		remove_state_core = 76
+		remove_state_core = 764
+		ROM = {
+				add_timed_idea = {
+		idea = ROM_trans
+		days = 120
+			}
+		}
+		HUN = {
+				add_timed_idea = {
+		idea = HUN_trans
+		days = 120
+			}
+		transfer_state = 83
+		transfer_state = 764
+		transfer_state = 84
+		transfer_state = 82
+		add_state_core = 83
+		add_state_core = 764
+		add_state_core = 84
+		add_state_core = 82
+		}
+		81 = {
+		add_extra_state_shared_building_slots = 3
+		}
+		46 = {
+		add_extra_state_shared_building_slots = 3
+		}
+		79 = {
+		add_extra_state_shared_building_slots = 3
+		}
+		set_global_flag = trans1
+		HUN = {country_event = { id =  dfu.34 }}
+		}
+			if = { 
+				limit = {
+				NOT = { has_global_flag = fall_of_yugoslavia } 
+				}
+		remove_state_core = 83
+		remove_state_core = 84
+		remove_state_core = 82
+		remove_state_core = 76
+		remove_state_core = 764
+		ROM = {
+				add_timed_idea = {
+		idea = ROM_trans
+		days = 120
+			}
+		}
+		HUN = {
+				add_timed_idea = {
+		idea = HUN_trans
+		days = 120
+			}
+		transfer_state = 83
+		transfer_state = 84
+		transfer_state = 82
+		add_state_core = 83
+		add_state_core = 84
+		add_state_core = 82
+		}
+		81 = {
+		add_extra_state_shared_building_slots = 3
+		}
+		46 = {
+		add_extra_state_shared_building_slots = 3
+		}
+		79 = {
+		add_extra_state_shared_building_slots = 3
+		}
+		set_global_flag = trans1
+		HUN = {country_event = { id =  dfu.34 }}
+		}
+	}
+	option = {
+	name = dfu.33.b
+	set_global_flag = trans2
+	HUN = {country_event = { id =  dfu.35 }}
+	}
+}
+country_event = {
+id = dfu.34#Romania Agrees
+	title = dfu.34.t
+	desc = dfu.34.d
+	picture = GFX_report_event_soviet_tank_parade
+	fire_only_once = yes
+	is_triggered_only = yes
+
+    trigger = {
+
+    }
+	
+		option = {
+		name = dfu.34.a
+	}
+}
+country_event = {
+id = dfu.35#Romania Denies
+	title = dfu.35.t
+	desc = dfu.35.d
+	picture = GFX_report_event_soviet_tank_parade
+	fire_only_once = yes
+	is_triggered_only = yes
+
+    trigger = {
+
+    }
+		option = {
+		name = dfu.35.a
+	}
+}

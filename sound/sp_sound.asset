@@ -1,0 +1,56 @@
+sound =
+{
+	name = "entertheeast"
+	file = "dfu_sound/entertheeast.wav"
+}
+sound =
+{
+	name = "girlsundpanzer"
+	file = "dfu_sound/girlsundpanzer.wav"
+}
+sound =
+{
+	name = "nanjing"
+	file = "dfu_sound/nanjing.wav"
+}
+sound =
+{
+	name = "greater"
+	file = "dfu_sound/greater.wav"
+}
+sound =
+{
+	name = "japan"
+	file = "dfu_sound/japan.wav"
+}
+sound =
+{
+	name = "dayofinfamy"
+	file = "dfu_sound/dayofinfamy.wav"
+}
+sound =
+{
+	name = "rhein"
+	file = "dfu_sound/rhein.wav"
+
+}
+sound =
+{
+	name = "berlin"
+	file = "dfu_sound/berlin.wav"
+}
+sound =
+{
+	name = "spainwar"
+	file = "dfu_sound/spainwar.wav"
+}
+sound =
+{
+	name = "iron"
+	file = "dfu_sound/iron.wav"
+}
+sound =
+{
+	name = "stavka"
+	file = "dfu_sound/stavka.wav"
+}

@@ -1,0 +1,30 @@
+﻿add_namespace = gduevents
+
+country_event = { 
+	id = gduevents.15
+	title = gduevents.15.t 
+	desc = gduevents.15.d 
+	picture = GFX_report_event_saf_soldiers 
+	
+	is_triggered_only = yes 
+	
+	option = { 
+		name = gduevents.15.a 
+
+	}
+	
+}
+country_event = { 
+	id = gduevents.20
+	title = gduevents.20.t 
+	desc = gduevents.20.d 
+	picture = GFX_report_event_merchant_ship_01  
+	
+	is_triggered_only = yes 
+	
+	option = { 
+		name = gduevents.20.a 
+
+	}
+	
+}

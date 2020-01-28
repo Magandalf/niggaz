@@ -1,0 +1,88 @@
+soundeffect = {
+	name = "entertheeast"
+	sounds = {
+		sound = 
+			entertheeast
+	}
+	volume = 1.0
+}
+soundeffect = {
+	name = "girlsundpanzer"
+	sounds = {
+		sound = 
+			girlsundpanzer
+	}
+	volume = 1.0
+}
+soundeffect = {
+	name = "spainwar"
+	sounds = {
+		sound = 
+			spainwar
+	}
+	volume = 1.0
+}
+soundeffect = {
+	name = "greater"
+	sounds = {
+		sound = 
+			greater
+	}
+	volume = 1.0
+}
+soundeffect = {
+	name = "iron"
+	sounds = {
+		sound = 
+			iron
+	}
+	volume = 1.0
+}
+soundeffect = {
+	name = "nanjing"
+	sounds = {
+		sound = 
+			nanjing
+	}
+	volume = 1.0
+}
+soundeffect = {
+	name = "japan"
+	sounds = {
+		sound = 
+			japan
+	}
+	volume = 1.0
+}
+soundeffect = {
+	name = "dayofinfamy"
+	sounds = {
+		sound = 
+			dayofinfamy
+	}
+	volume = 1.0
+}
+soundeffect = {
+	name = "rhein"
+	sounds = {
+		sound = 
+			rhein
+	}
+	volume = 1.0
+}
+soundeffect = {
+	name = "berlin"
+	sounds = {
+		sound = 
+			berlin
+	}
+	volume = 1.0
+}
+soundeffect = {
+	name = "stavka"
+	sounds = {
+		sound = 
+			stavka
+	}
+	volume = 1.0
+}

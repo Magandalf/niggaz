@@ -1,0 +1,1203 @@
+focus_tree = {
+	id = hungary_focus
+	country = {
+		factor = 1
+
+		modifier = {
+			add = 10
+			tag = HUN
+		}
+	}
+		continuous_focus_position = { x = 50 y = 1500 }
+	default = yes
+	focus = {
+		id = Hun_King
+		icon = GFX_focus_hun_elect_a_king
+		cost = 10
+		x = 11
+		y = 0
+		
+		completion_reward = {
+		add_political_power = 180
+		}
+
+	}
+	focus = {
+		id = Hun_bog_opieka_wegry
+		icon = GFX_focus_rom_royal_dictatorship
+		cost = 5
+		prerequisite = {
+			focus = Hun_King
+		}
+		x = 11
+		y = 1
+		completion_reward = {
+		add_war_support = 0.05
+		add_stability = 0.1
+		}
+	}
+	focus = {
+		id = Hun_revis
+		icon = GFX_focus_usa_focus_on_europe
+		cost = 10
+		prerequisite = {
+			focus = Hun_bog_opieka_wegry
+		}
+		x = 6
+		y = 2
+completion_reward = {
+add_ideas = HUN_revisionism
+}
+	}
+	focus = {
+		id = Hun_treaty_trianon
+		icon = GFX_focus_renounce_the_treaty_of_trianon
+		cost = 10
+		available = {
+			threat > 0.1
+		}
+		prerequisite = {
+			focus = Hun_revis
+		}
+		x = 6
+		y = 3
+completion_reward = {
+remove_ideas = HUN_treaty_of_triannon
+remove_ideas = HUN_treaty_of_triannon_2
+}
+	}
+	focus = {
+		id = Hun_claims
+		icon = GFX_goal_generic_forceful_treaty
+		cost = 5
+		prerequisite = {
+			focus = Hun_treaty_trianon
+		}
+		x = 6
+		y = 4
+		completion_reward = {
+add_state_claim = 73
+add_state_claim = 664
+add_state_claim = 792
+add_state_claim = 45
+}
+	}
+	focus = {
+		id = Hun_chorwat
+		icon = GFX_goal_CRO_ustasha_army
+		cost = 5
+		prerequisite = {
+			focus = Hun_claims
+		}
+		x = 3
+		y = 5
+completion_reward = {
+add_equipment_to_stockpile = {
+    type = infantry_equipment_1
+    amount = -1500
+    producer = HUN
+            }
+  			HUN = { add_state_core = 792 }
+			HUN = { add_state_core = 45 }
+		}
+	}
+	focus = {
+		id = Hun_after_vienna
+		icon = GFX_goal_generic_cavalry
+		cost = 5
+		prerequisite = {
+			focus = Hun_claims
+		}
+		x = 6
+		y = 5
+		available = {
+		owns_state = 76
+		}
+	completion_reward = {
+	GER = {
+	add_to_faction = ROOT
+	}
+	add_political_power = 50
+	if = {
+	limit = { has_idea = HUN_eternal_regency }
+			swap_ideas = {
+     remove_idea = HUN_eternal_regency
+     add_idea = HUN_eternal_regency2
+							}
+			}
+	else_if = {
+	limit = { has_idea = HUN_eternal_regency2 }
+			swap_ideas = {
+     remove_idea = HUN_eternal_regency2
+     add_idea = HUN_eternal_regency3
+							}
+			}
+		}
+	}
+	focus = {
+		id = Hun_old_bord
+		icon = GFX_goal_generic_occupy_states_ongoing_war
+		cost = 10
+		available = {
+		NOT = {ROM = {has_country_flag = iron_guard_in_power}}
+		}
+		prerequisite = {
+			focus = Hun_after_vienna
+		}
+		x = 5
+		y = 6
+completion_reward = {
+ROM = {country_event = { id =  dfu.33 }}
+}
+	}
+	focus = {
+		id = Hnu_magy_trans
+		icon = GFX_goal_unknown
+		cost = 5
+		prerequisite = {
+			focus = Hun_after_vienna
+		}
+		x = 7
+		y = 6
+completion_reward = {
+set_global_flag = transilvanianull
+						76 = {
+							add_state_modifier = {
+					modifier = {
+						local_manpower = 0.9
+						local_building_slots = 3
+						local_factory_sabotage = -0.005
+						local_org_regain = 0.1
+						local_resources_factor = 0.2
+					}
+							}						
+						}
+}
+	}
+	focus = {
+		id = Hun_rongyos
+		icon = GFX_focus_prc_infiltration
+		cost = 5
+		prerequisite = {
+			focus = Hun_claims
+		}
+		x = 10
+		y = 5
+		available = {
+		owns_state = 76
+		}
+				completion_reward = {
+army_experience  = 50
+add_war_support = 0.05
+}
+	}
+	focus = {
+		id = Hun_mines
+		icon = GFX_goal_generic_construction2
+		cost = 5
+		prerequisite = {
+			focus = Hun_rongyos
+		}
+		x = 9
+		y = 6
+	completion_reward = {
+			664 = {
+				add_resource = {
+					type = steel
+					amount = 25
+				}
+			}
+			}
+	}
+	focus = {
+		id = Hun_slovak
+		icon = GFX_goal_unknown
+		cost = 5
+		prerequisite = {
+			focus = Hun_mines
+		}
+		x = 9
+		y = 7
+	completion_reward = {
+	annex_country = { target = SLO transfer_troops = no }
+	add_war_support = 0.05
+	if = {
+	limit = { has_idea = HUN_eternal_regency }
+			swap_ideas = {
+     remove_idea = HUN_eternal_regency
+     add_idea = HUN_eternal_regency2
+							}
+			}
+	else_if = {
+	limit = { has_idea = HUN_eternal_regency2 }
+			swap_ideas = {
+     remove_idea = HUN_eternal_regency2
+     add_idea = HUN_eternal_regency3
+							}
+			}
+
+		}
+	}
+	focus = {
+		id = Hun_horthy
+		icon = GFX_focus_hun_assassinate_horthy
+		cost = 5
+		prerequisite = {
+			focus = Hun_bog_opieka_wegry
+		}
+		x = 16
+		y = 2
+		completion_reward = {
+		add_ideas = HUN_gusztav_gratz
+		add_political_power = 50
+		add_stability = 0.05
+		}
+	}
+	focus = {
+		id = Hun_prime_min
+		icon = GFX_goal_support_fascism
+		cost = 5
+		prerequisite = {
+			focus = Hun_horthy
+		}
+		x = 13
+		y = 3
+		completion_reward = {
+		add_ideas = HUN_prime
+		}
+	}
+	focus = {
+		id = Hun_ger_deal
+		icon = GFX_focus_chi_mission_to_germany
+		cost = 5
+		prerequisite = {
+			focus = Hun_prime_min
+		}
+		x = 13
+		y = 5
+completion_reward = {
+			64 = {
+				add_resource = {
+					type = aluminium
+					amount = 20
+				}
+			}
+						43 = {
+				add_extra_state_shared_building_slots = 2
+				add_building_construction = {
+					type = industrial_complex
+					level = 2
+					instant_build = yes
+			}
+			}
+}
+	}
+	focus = {
+		id = Hun_burgen
+		icon = GFX_goal_generic_forceful_treaty
+		cost = 5
+		prerequisite = {
+			focus = Hun_rongyos
+		}
+		prerequisite = {
+			focus = Hun_ger_deal
+		}
+		x = 11
+		y = 6
+completion_reward = {
+	GER = {country_event = { id =  dfu.30 }}
+}
+	}
+	focus = {
+		id = Hun_alumin
+		icon = GFX_focus_generic_aluminum
+		cost = 5
+		prerequisite = {
+			focus = Hun_ger_deal
+		}
+		x = 13
+		y = 6
+completion_reward = {
+			43 = {
+				add_resource = {
+					type = aluminium
+					amount = 16
+				}
+			}
+}
+	}
+	focus = {
+		id = Hun_gen_staff
+		icon = GFX_focus_generic_military_mission
+		cost = 5
+		prerequisite = {
+			focus = Hun_alumin
+		}
+		x = 13
+		y = 7
+completion_reward = {
+		add_tech_bonus = {
+				name = land_doc_bonus
+				bonus = 1
+				uses = 2
+				category = land_doctrine
+			}
+}
+	}
+	focus = {
+		id = Hun_annon_project
+		icon = GFX_goal_continuous_repairments
+		cost = 10
+		prerequisite = {
+			focus = Hun_horthy
+		}
+		x = 16
+		y = 3
+		completion_reward = {
+		add_ideas = HUN_anon
+			add_tech_bonus = {
+				name = Hun_annon_project
+				bonus = 1
+				uses = 2
+				technology = construction3
+				technology = construction4
+				technology = concentrated_industry3
+				technology = concentrated_industry4
+                                technology = dispersed_industry3
+				technology = dispersed_industry4
+				technology = advanced_machine_tools
+				technology = assembly_line_production
+			}
+		}
+
+	}
+	focus = {
+		id = Hun_elek_ing
+		icon = GFX_goal_generic_production2
+		cost = 5
+		prerequisite = {
+			focus = Hun_annon_project
+		}
+		x = 14
+		y = 4
+completion_reward = {
+			add_tech_bonus = {
+				name = USA_committee_on_technocracy
+				uses = 2
+				bonus = 1
+				category = electronics
+			}
+}
+	}
+	focus = {
+		id = Hun_vienn_circle
+		icon = GFX_focus_research
+		cost = 10
+		prerequisite = {
+			focus = Hun_annon_project
+		}
+		x = 16
+		y = 4
+		completion_reward = {
+			add_research_slot = 1
+						swap_ideas = {
+     remove_idea = HUN_anon
+     add_idea = HUN_anon2
+							}
+		}
+	}
+	focus = {
+		id = Hun_rail
+		icon = GFX_goal_generic_construct_infrastructure
+		cost = 5
+		prerequisite = {
+			focus = Hun_vienn_circle
+		}
+		x = 16
+		y = 5
+completion_reward = {
+			155 = {
+				add_building_construction = {
+					type = infrastructure
+					level = 1
+					instant_build = yes
+			}
+			}
+						154 = {
+				add_building_construction = {
+					type = infrastructure
+					level = 1
+					instant_build = yes
+			}
+			}
+						43 = {
+				add_building_construction = {
+					type = infrastructure
+					level = 1
+					instant_build = yes
+			}
+			}
+}
+	}
+	focus = {
+		id = Hun_bud
+		icon = GFX_focus_generic_industry_2
+		cost = 10
+		prerequisite = {
+			focus = Hun_rail
+		}
+		x = 16
+		y = 6
+completion_reward = {
+			add_tech_bonus = {
+				name = Hun_annon_project
+				bonus = 1
+				uses = 1
+				technology = construction3
+				technology = construction4
+				technology = concentrated_industry3
+				technology = concentrated_industry4
+				technology = advanced_machine_tools
+				technology = assembly_line_production
+                                technology = dispersed_industry3
+				technology = dispersed_industry4
+			}
+			43 = {
+				add_extra_state_shared_building_slots = 2
+				add_building_construction = {
+					type = industrial_complex
+					level = 2
+					instant_build = yes
+			}
+			}
+}
+	}
+	focus = {
+		id = Hun_country_dev
+		icon = GFX_focus_mex_privatisation
+		cost = 10
+		prerequisite = {
+			focus = Hun_bud
+		}
+		x = 14
+		y = 8
+completion_reward = {
+			155 = {
+				add_extra_state_shared_building_slots = 2
+				add_building_construction = {
+					type = industrial_complex
+					level = 2
+					instant_build = yes
+			}
+			}
+}
+	}
+	focus = {
+		id = Hun_urb
+		icon = GFX_goal_generic_construct_civ_factory
+		cost = 5
+		prerequisite = {
+			focus = Hun_bud
+		}
+		x = 15
+		y = 7
+completion_reward = {
+			154 = {
+				add_extra_state_shared_building_slots = 3
+				add_building_construction = {
+					type = industrial_complex
+					level = 1
+					instant_build = yes
+			}
+			}
+}
+	}
+	focus = {
+		id = Hun_2_slot
+		icon = GFX_focus_research2
+		cost = 10
+		prerequisite = {
+			focus = Hun_bud
+		}
+		x = 16
+		y = 8
+		completion_reward = {
+			add_research_slot = 1
+		}
+	}
+	focus = {
+		id = Hun_mil_inv
+		icon = GFX_goal_generic_construct_mil_factory
+		cost = 10
+		prerequisite = {
+			focus = Hun_bud
+		}
+		x = 18
+		y = 8
+completion_reward = {
+			154 = {
+				
+				add_extra_state_shared_building_slots = 2
+				add_building_construction = {
+					type = arms_factory
+					level = 2
+					instant_build = yes
+				}
+			}
+}
+	}
+	focus = {
+		id = Hun_res_ext
+		icon = GFX_goal_generic_construction
+		cost = 5
+		prerequisite = {
+			focus = Hun_country_dev
+		}
+		prerequisite = {
+			focus = Hun_mil_inv
+		}
+		x = 16
+		y = 9
+completion_reward = {
+			add_tech_bonus = {
+				name = Hun_annon_project
+				bonus = 1
+				uses = 1
+				technology = construction3
+				technology = construction4
+				technology = concentrated_industry3
+				technology = concentrated_industry4
+				technology = advanced_machine_tools
+				technology = assembly_line_production
+                                technology = dispersed_industry3
+				technology = dispersed_industry4
+			}
+			43 = {
+				add_resource = {
+					type = steel
+					amount = 12
+				}
+			}
+}
+	}
+	focus = {
+		id = Hun_ind_eff
+		icon = GFX_focus_generic_industry_3
+		cost = 10
+		prerequisite = {
+			focus = Hun_res_ext
+		}
+		x = 16
+		y = 10
+completion_reward = {
+			43 = {
+				
+				add_extra_state_shared_building_slots = 2
+				add_building_construction = {
+					type = industrial_complex
+					level = 2
+					instant_build = yes
+				}
+			}
+}
+	}
+	focus = {
+		id = Hun_oil_field
+		icon = GFX_goal_generic_oil_refinery
+		cost = 5
+		prerequisite = {
+			focus = Hun_bud
+		}
+		x = 17
+		y = 7
+		completion_reward = {
+		154 = {
+		add_extra_state_shared_building_slots = 2
+		}
+						154 = {
+				add_resource = {
+					type = oil
+					amount = 10
+				}
+			}
+		}
+	}
+	focus = {
+		id = Hun_bay
+		icon = GFX_focus_generic_cryptologic_bomb
+		cost = 5
+		prerequisite = {
+			focus = Hun_annon_project
+		}
+		x = 18
+		y = 4
+completion_reward = {
+			add_tech_bonus = {
+				name = radar_focus
+				bonus = 1
+				uses = 1
+				category = radar_tech
+			}
+}
+	}
+	focus = {
+		id = Hun_hev_arms
+		icon = GFX_goal_generic_construct_mil_factory
+		cost = 10
+		prerequisite = {
+			focus = Hun_ind_eff
+		}
+		mutually_exclusive = {
+			focus = Hun_forg_inve
+		}
+		x = 18
+		y = 11
+completion_reward = {
+			43 = {
+				
+				add_extra_state_shared_building_slots = 2
+				add_building_construction = {
+					type = arms_factory
+					level = 2
+					instant_build = yes
+				}
+			}
+			swap_ideas = {
+     remove_idea = HUN_anon2
+     add_idea = HUN_anon3
+							}
+}
+	}
+	focus = {
+		id = Hun_sec_rea
+		icon = GFX_focus_RAJ_lions_of_the_great_war
+		cost = 5
+		prerequisite = {
+			focus = Hun_horthy
+		}
+		x = 23
+		y = 3
+		
+		bypass = {
+has_idea = partial_economic_mobilisation
+		}
+		completion_reward = {
+		add_ideas = partial_economic_mobilisation
+		}
+	}
+
+	focus = {
+		id = Hun_huba
+		icon = GFX_goal_generic_small_arms
+		cost = 5
+		prerequisite = {
+			focus = Hun_sec_rea
+		}
+		x = 21
+		y = 4
+completion_reward = {
+add_ideas = HUN_huba_order
+}
+	}
+	focus = {
+		id = Hun_army_man
+		icon = GFX_focus_generic_strike_at_democracy1
+		cost = 5
+		prerequisite = {
+			focus = Hun_huba
+		}
+		x = 19
+		y = 5
+completion_reward = {
+		add_tech_bonus = {
+				name = land_doc_bonus
+				bonus = 1
+				uses = 1
+				category = land_doctrine
+			}
+}
+	}
+	focus = {
+		id = Hun_areo_inst
+		icon = GFX_goal_generic_air_doctrine
+		cost = 5
+		prerequisite = {
+			focus = Hun_sec_rea
+		}
+		x = 25
+		y = 4
+completion_reward = {
+air_experience  = 50
+}
+	}
+	focus = {
+		id = Hun_bled
+		icon = GFX_focus_generic_little_entente
+		cost = 5
+		prerequisite = {
+			focus = Hun_huba
+			focus = Hun_areo_inst
+		}
+		bypass = {
+NOT = {has_idea = HUN_treaty_of_triannon}
+		}		
+		x = 22
+		y = 5
+completion_reward = {
+			swap_ideas = {
+     remove_idea = HUN_treaty_of_triannon
+     add_idea = HUN_treaty_of_triannon_2
+							}
+}
+	}
+	focus = {
+		id = Hun_gender
+		icon = GFX_goal_unknown
+		cost = 5
+		prerequisite = {
+			focus = Hun_bled
+		}
+		x = 24
+		y = 6
+completion_reward = {
+			swap_ideas = {
+     remove_idea = HUN_huba_order
+     add_idea = HUN_huba_order2
+							}
+}
+	}
+	focus = {
+		id = Hun_levente
+		icon = GFX_goal_unknown
+		cost = 10
+		prerequisite = {
+			focus = Hun_gender
+		}
+		x = 24
+		y = 7
+completion_reward = {
+add_ideas = HUN_association
+}
+	}
+	focus = {
+		id = Hun_mod_inf
+		icon = GFX_goal_rhineland1
+		cost = 10
+		prerequisite = {
+			focus = Hun_levente
+		}
+		x = 22
+		y = 8
+		completion_reward = {
+		add_tech_bonus = {
+name = land_doc_bonus
+bonus = 0.5
+uses = 2
+technology = improved_infantry_weapons
+technology =improved_infantry_weapons_2
+technology = infantry_weapons2
+}
+		}
+	}
+	focus = {
+		id = Hun_mount
+		icon = GFX_goal_unknown
+		cost = 5
+		prerequisite = {
+			focus = Hun_mod_inf
+		}
+		completion_reward ={
+		   add_tech_bonus = {
+				name = special_forces_bonus
+				bonus = 1
+				uses = 1
+				technology = tech_mountaineers
+				technology = tech_mountaineers2
+			}
+			}
+		x = 22
+		y = 10
+
+	}
+	focus = {
+		id = Hun_air_effort
+		icon = GFX_goal_generic_build_airforce
+		cost = 5
+		prerequisite = {
+			focus = Hun_areo_inst
+		}
+		x = 24
+		y = 5
+completion_reward = {
+air_experience  = 50
+		add_tech_bonus = {
+				name = air_doc_bonus
+				bonus = 1
+				uses = 2
+				category = air_doctrine
+			}
+}
+	}
+	focus = {
+		id = Hun_paratroop
+		icon = GFX_goal_generic_CAS
+		cost = 5
+		prerequisite = {
+			focus = Hun_areo_inst
+		}
+		x = 26
+		y = 5
+completion_reward = {
+		   add_tech_bonus = {
+				name = special_forces_bonus
+				bonus = 1
+				uses = 1
+				technology = paratroopers
+				technology = paratroopers2
+			}
+}
+	}
+	focus = {
+		id = Hun_anti_tank
+		icon = GFX_antitank
+		cost = 5
+		prerequisite = {
+			focus = Hun_mod_inf
+		}
+		x = 23
+		y = 9
+		completion_reward = {
+				add_tech_bonus = {
+name = land_doc_bonus
+bonus = 1
+uses = 1
+category = cat_anti_tank
+}
+		}
+	}
+	focus = {
+		id = Hun_assault
+		icon = GFX_goal_generic_army_artillery
+		cost = 5
+		prerequisite = {
+			focus = Hun_levente
+		}
+		x = 26
+		y = 8
+		completion_reward = {
+			add_tech_bonus = {
+				name = infantry_artillery_bonus
+				bonus = 0.5
+				uses = 1
+				category = artillery
+			}
+		}
+	}
+	focus = {
+		id = Hun_arti
+		icon = GFX_goal_unknown
+		cost = 10
+		prerequisite = {
+			focus = Hun_assault
+		}
+		x = 25
+		y = 9
+		completion_reward = {
+add_ideas = HUN_gyor
+		}
+	}
+	focus = {
+		id = Hun_war_uk
+		icon = GFX_focus_attack_britain
+		cost = 5
+		prerequisite = {
+			focus = Hun_chorwat
+		}
+		available = {
+		GER = { has_war_with = ENG }
+		has_global_flag = fall_of_yugoslavia
+		}
+		x = 3
+		y = 6
+	completion_reward = {
+		HUN ={
+	declare_war_on = {
+					target = ENG
+					type = take_state
+					generator = { 85 }
+				}
+				}
+	if = {
+	limit = { has_idea = HUN_eternal_regency }
+			swap_ideas = {
+     remove_idea = HUN_eternal_regency
+     add_idea = HUN_eternal_regency2
+							}
+			}
+	else_if = {
+	limit = { has_idea = HUN_eternal_regency2 }
+			swap_ideas = {
+     remove_idea = HUN_eternal_regency2
+     add_idea = HUN_eternal_regency3
+							}
+			}
+			HUN = { transfer_state = 792 }
+			HUN = { transfer_state = 45 }
+
+		}
+	}
+	focus = {
+		id = Hun_voivo_inv
+		icon = GFX_focus_generic_industry_1
+		cost = 10
+		prerequisite = {
+			focus = Hun_war_uk
+		}
+		x = 3
+		y = 7
+	completion_reward = {
+			45 = {
+				add_extra_state_shared_building_slots = 3
+				add_building_construction = {
+					type = industrial_complex
+					level = 3
+					instant_build = yes
+			}
+			}
+			45 = {
+				add_building_construction = {
+					type = infrastructure
+					level = 2
+					instant_build = yes
+			}
+			}
+		}
+	}
+	focus = {
+		id = Hun_rum_pact
+		icon = GFX_focus_rom_preserve_romania
+		cost = 5
+		prerequisite = {
+			focus = Hun_old_bord
+		}
+		x = 5
+		y = 7
+		available = {
+		has_global_flag = trans1
+		}
+completion_reward = {
+add_ideas = Cooperation
+ROM = {add_ideas = Cooperation}
+}
+	}
+	focus = {
+		id = Hun_bloszoje
+		icon = GFX_focus_proclaim_the_restauration_of_austria_hungary
+		cost = 10
+		prerequisite = {
+			focus = Hun_voivo_inv
+		}
+		prerequisite = {
+			focus = Hnu_magy_trans
+		}
+		prerequisite = {
+			focus = Hun_slovak
+		}
+		completion_reward = {
+		every_state = { 
+			limit = {is_owned_by = HUN}
+			add_core_of = HUN
+		}
+		remove_ideas = HUN_eternal_regency3
+		add_ideas = HUN_greater
+		set_cosmetic_tag = HUN_GREATER
+			hidden_effect = {
+				news_event = { id = news.299 }
+			}
+		}
+		x = 7
+		y = 8
+
+	}
+	focus = {
+		id = Hun_ger_tech
+		icon = GFX_goal_tfv_generic_tech_sharing
+		cost = 5
+		available = {
+		has_global_flag = burger3
+		}
+		prerequisite = {
+			focus = Hun_burgen
+		}
+		prerequisite = {
+			focus = Hun_gen_staff
+		}
+		x = 11
+		y = 8
+	completion_reward = {
+add_to_tech_sharing_group = axis_research
+GER = {add_to_tech_sharing_group = axis_research}
+		}
+	}
+	focus = {
+		id = Hun_maort
+		icon = GFX_goal_generic_oil_refinery
+		cost = 10
+		prerequisite = {
+			focus = Hun_forg_inve
+		}
+		x = 13
+		y = 12
+completion_reward = {
+add_ideas = HUN_maort
+}
+	}
+	focus = {
+		id = Hun_forg_inve
+		icon = GFX_focus_eng_concessions_to_the_trade_unions
+		cost = 10
+		prerequisite = {
+			focus = Hun_ind_eff
+		}
+		x = 14
+		y = 11
+	completion_reward = {
+add_ideas = HUN_foreign
+		}
+	}
+	focus = {
+		id = Hun_air_fact
+		icon = GFX_goal_generic_air_fighter
+		cost = 10
+		prerequisite = {
+			focus = Hun_hev_arms
+		}
+		x = 17
+		y = 12
+completion_reward = {
+add_ideas = HUN_aircraft
+}
+	}
+	focus = {
+		id = Hun_lic_des
+		icon = GFX_focus_generic_license_production
+		cost = 10
+		prerequisite = {
+			focus = Hun_forg_inve
+		}
+		x = 15
+		y = 12
+	completion_reward = {
+add_ideas = HUN_designs
+		}
+	}
+	focus = {
+		id = Hun_toldi
+		icon = GFX_focus_generic_army_tanks2
+		cost = 10
+		prerequisite = {
+			focus = Hun_hev_arms
+		}
+		x = 19
+		y = 12
+	completion_reward = {
+				add_tech_bonus = {
+				bonus = 2
+				uses = 3
+				name = mech_army_bonus2
+			technology = improved_medium_tank
+			technology = improved_heavy_tank
+			technology = advanced_light_tank
+			technology = amphibious_tank
+			technology = amphibious_tank_2
+			}
+add_ideas = HUN_assault_gun_focus
+		}
+	}
+	focus = {
+		id = Hun_rapid
+		icon = GFX_goal_generic_army_motorized
+		cost = 5
+		prerequisite = {
+			focus = Hun_bled
+		}
+		prerequisite = {
+			focus = Hun_huba
+		}
+		x = 20
+		y = 6
+	completion_reward = {
+add_tech_bonus = {
+name = land_doc_bonus
+bonus = 0.75
+uses = 1
+category = cat_mechanized_equipment
+}
+		}
+	}
+	focus = {
+		id = Hun_blitz
+		icon = GFX_focus_ger_oppose_hitler
+		cost = 5
+		prerequisite = {
+			focus = Hun_rapid
+		}
+		x = 20
+		y = 7
+	completion_reward = {
+add_ideas = HUN_tank
+		}
+	}
+	focus = {
+		id = Hun_adv_arit
+		icon = GFX_goal_generic_army_artillery2
+		cost = 10
+		prerequisite = {
+			focus = Hun_arti_effort
+		}
+		x = 27
+		y = 10
+		completion_reward = {
+			add_tech_bonus = {
+				name = infantry_artillery_bonus
+				bonus = 1
+				uses = 1
+				category = artillery
+			}
+		}
+	}
+	focus = {
+		id = Hun_sub_gans
+		icon = GFX_goal_generic_small_arms
+		cost = 10
+		prerequisite = {
+			focus = Hun_mod_inf
+		}
+		x = 21
+		y = 9
+	completion_reward = {
+			swap_ideas = {
+     remove_idea = HUN_huba_order2
+     add_idea = HUN_huba_order3
+							}
+		}
+	}
+	focus = {
+		id = Hun_arti_effort
+		icon = GFX_goal_generic_army_artillery2
+		cost = 10
+		prerequisite = {
+			focus = Hun_assault
+		}
+		x = 27
+		y = 9
+		completion_reward = {
+			add_tech_bonus = {
+				name = infantry_artillery_bonus
+				bonus = 1
+				uses = 1
+				category = artillery
+			}
+		}
+	}
+}

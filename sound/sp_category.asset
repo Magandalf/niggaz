@@ -1,0 +1,23 @@
+category = {
+ name = "DFU SOUNDS"
+ soundeffects = {
+  click_ledger_tab
+ click_training_tab
+ click_tech_tab
+ click_diplomacy_tab
+ click_trade_tab
+ click_construction_tab
+ click_production_tab
+	nanjing
+	japan
+	dayofinfamy
+	rhein
+	berlin
+	spainwar
+	iron
+    greater
+    entertheeast
+    girlsundpanzer
+    stavka
+ }
+}

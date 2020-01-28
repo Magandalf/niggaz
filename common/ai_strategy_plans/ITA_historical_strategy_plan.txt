@@ -1,0 +1,72 @@
+ITA_historical_plan = {
+	name = "Italy historical plan"
+	desc = "Historical behavior for Italy"
+
+	enable = {
+		original_tag = ITA
+		OR = {
+			AND = {
+				is_historical_focus_on = yes
+				has_game_rule = {
+					rule = ITA_ai_behavior
+					option = DEFAULT
+				}
+			}
+			has_country_flag = ITA_AI_RANDOM_FASCIST_HISTORICAL
+			has_game_rule = {
+				rule = ITA_ai_behavior
+				option = FASCIST_HISTORICAL
+			}
+		}
+	}
+	ai_national_focuses = {
+		ITA_ethiopian_war_logistics 				#March 10 1936	
+		ITA_industrial_effort 						#July 30 1936	
+		ITA_mare_nostrum 							#October 10 1936
+		ITA_industrial_effort_2 					#February 30 1937
+		ITA_victoryinETH 							#May 20 1936	
+		ITA_extra_tech_slot 						#April 30 1938
+		ITA_destroyer
+		ITA_atlantic_focus
+		ITA_capital
+		ITA_doctrine
+		ITA_italian_highways 						#November 20 1939
+		ITA_albania_war_goal 						#February 10 1939
+		ITA_slovenia_dalmatia_claims 				#September 30 1937	
+ 		ITA_prospect_for_oil 						#December 30 1942
+		ITA_army_primacy 							#October 10 1936
+		ITA_air_innovation
+		ITA_bomber_effort
+		ITA_Navy_Airforce_Coordination
+		ITA_antitank
+		ITA_infantry_reduction
+		ITA_libyan_refineries
+		ITA_libyan_infrastructure
+		ITA_modernized_army
+		ITA_modernized_artillery
+		ITA_weapons
+		ITA_fortification_effort
+		ITA_antiairpreparations
+		ITA_pact_of_steel
+		ITA_german_rd_treaty
+		ITA_greece_war_goal  						#August 30 1940
+	}				
+
+	research = {
+
+	}
+
+	ideas = {
+
+	}
+
+	# Keep small, as it is used as a factor for some things (such as research needs)
+	# Recommended around 1.0. Useful for relation between plans
+	weight = {
+		factor = 1.0
+		modifier = {
+			factor = 1.0
+		}
+	}
+
+}

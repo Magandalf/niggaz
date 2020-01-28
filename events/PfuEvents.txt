@@ -1,0 +1,56 @@
+﻿add_namespace = pfu
+
+news_event = {
+	id = pfu.30
+	title = pfu.30.t
+	desc = pfu.30.desc
+	picture = GFX_news_event_vichy_neutral
+	
+	major = yes 
+
+    is_triggered_only = yes
+
+	option = {
+		name = pfu.30.a
+	}
+}
+# Plan Vert
+country_event = {
+	id = pfu.32
+	title = pfu.32.t
+	desc = pfu.32.desc
+	picture = GFX_report_event_plan_vert
+
+	is_triggered_only = yes
+
+	option = {
+		name = pfu.32.a
+		14 = {
+			damage_building = { type = air_base damage = 3 }
+			damage_building = { type = infrastructure damage = 2 }
+		}
+		15 = {
+			damage_building = { type = infrastructure damage = 2 }
+			damage_building = { type = air_base damage = 3 }
+		}
+		29 = {
+			damage_building = { type = infrastructure damage = 2 }
+			damage_building = { type = air_base damage = 3 }
+		}
+
+		remove_building = {
+			type = bunker
+			level = 2
+			province = 6449
+		}
+		remove_building = {
+			type = bunker
+			level = 2
+			province = 3552
+		}
+
+		ai_chance = {
+			factor = 100
+		}
+	}
+}

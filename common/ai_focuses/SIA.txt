@@ -1,0 +1,15 @@
+
+ai_historical_focus_list_SIA = {
+	ai_national_focuses = {
+		SIA_consolidate_Khana_Ratsadon
+		SIA_end_the_depression
+		SIA_improve_our_roads
+		SIA_cement_sector_improvement
+		SIA_begin_industrialisation_plans
+		SIA_urbanisation_effort
+		SIA_electrification_effort
+		SIA_state_sponsored_civilian_construction
+		SIA_increase_the_education_budget
+		SIA_open_new_universities
+	}
+}

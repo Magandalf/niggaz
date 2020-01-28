@@ -1,0 +1,27 @@
+spriteTypes = {
+
+	spriteType = {
+		name = "GFX_report_event_indonesia"
+		texturefile = "gfx/event_pictures/japan_battle_flag.dds"
+	}
+	spriteType = {
+		name = "GFX_report_event_recession"
+		texturefile = "gfx/event_pictures/report_event_recession.dds"
+	}
+	spriteType = {
+		name = "GFX_report_event_totalwar"
+		texturefile = "gfx/event_pictures/report_event_totalwar.dds"
+	}
+	spriteType = {
+		name = "GFX_report_event_stalindead"
+		texturefile = "gfx/event_pictures/report_event_stalindead.dds"
+	}
+	spriteType = {
+		name = "GFX_news_event_stalin"
+		texturefile = "gfx/event_pictures/stalin.dds"
+	}
+	spriteType = {
+		name = "GFX_report_sovietfall"
+		texturefile = "gfx/event_pictures/sovietfall.dds"
+	}
+}

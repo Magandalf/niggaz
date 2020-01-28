@@ -1,0 +1,18 @@
+
+state={
+	id=417
+	name="STATE_417" # Hamadan
+	manpower = 1
+	state_category = rural
+
+	history={
+		owner = SOV
+		buildings = {
+			infrastructure = 3
+		}
+	}
+
+	provinces={
+		1982 2065 8040 8125 10922 
+	}
+}
