@@ -121,6 +121,25 @@ ideas = {
 			}
 			
 		}
+
+		GER_winter_debuff_idea = {
+
+			allowed = {
+				always = no
+			}
+
+			allowed_civil_war = {
+				always = yes
+			}
+
+			picture = generic_intel_bonus
+
+			removal_cost = -1
+
+			modifier = {
+				acclimatization_cold_climate_gain_factor = -0.65
+			}
+		}
 		
 		GER_wolfpacks = {
 		    allowed = {

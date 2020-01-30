@@ -11,6 +11,7 @@ if = {
     add_ideas = {
         communism_trade
 		SOV_political_commisars
+		general_winter_idea
 		soviet_gulag_0
     }
 set_convoys = 5000

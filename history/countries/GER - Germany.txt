@@ -120,6 +120,7 @@ add_to_faction = GER
 
 add_ideas = {
 	sour_loser
+	GER_winter_debuff_idea
 	general_staff
 	limited_exports
 	limited_conscription

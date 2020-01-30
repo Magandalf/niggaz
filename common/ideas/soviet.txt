@@ -509,6 +509,25 @@ ideas = {
 			}
 		}
 
+        general_winter_idea = {
+
+			allowed = {
+				always = no
+			}
+
+			allowed_civil_war = {
+				always = yes
+			}
+
+			picture = generic_intel_bonus
+
+			removal_cost = -1
+
+			modifier = {
+				acclimatization_cold_climate_gain_factor = 100.0 
+			}
+		}
+		
 		peoples_commissariat_focus = {
 			allowed = {
 				always = no
