@@ -103,7 +103,7 @@ NDefines.NMilitary.LAND_AIR_COMBAT_ORG_DAMAGE_MODIFIER = 0.07    -- vanilla'da 0
 
 ---Navy
 NDefines.NNavy.LEADER_EXPERIENCE_SCALE = 0.0
-NDefines.NNavy.ALL_SHIPS_ACTIVATE_TIME = 16
+NDefines.NNavy.ALL_SHIPS_ACTIVATE_TIME = 8
 NDefines.NNavy.ANTI_AIR_ATTACK_TO_AMOUNT = 0.02
 NDefines.NNavy.COMBAT_BASE_CRITICAL_CHANCE = 0.05								-- Base chance for receiving a critical chance. It get's scaled down with ship reliability.
 NDefines.NNavy.COMBAT_ARMOR_PIERCING_DAMAGE_REDUCTION = -0.95
@@ -167,9 +167,9 @@ NDefines.NNavy.GUN_HIT_PROFILES = { -- hit profiles for guns, if target ih profi
 		40.0,	-- small guns
 	}
 NDefines.NNavy.BASE_GUN_COOLDOWNS = { -- number of hours for a gun to be ready after shooting
-		2.0,	-- big guns
-		8.0,	-- torpedos
-		2.0,	-- small guns
+		1.0,	-- big guns
+		4.0,	-- torpedos
+		1.0,	-- small guns
 	}
 NDefines.NNavy.ORG_COST_WHILE_MOVING = { -- org cost while the ships are moving
 		0.4, -- HOLD
