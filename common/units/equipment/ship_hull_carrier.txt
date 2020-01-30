@@ -88,13 +88,13 @@ equipments = {
 		
 		surface_detection = 20
 		sub_detection = 5
-		surface_visibility = 30
+		surface_visibility = 1
 		naval_speed = 26
 		reliability = 0.70
 		
 		naval_range = 3000
 		
-		max_strength = 250
+		max_strength = 500
 		
 
 		fuel_consumption = 87
@@ -172,7 +172,7 @@ equipments = {
 		}
 		naval_range = 4000
 		reliability = 0.75
-		max_strength = 325
+		max_strength = 650
 		
 
 
@@ -230,7 +230,7 @@ equipments = {
 		
 		naval_range = 5000
 		reliability = 0.8
-		max_strength = 350
+		max_strength = 700
 		
 
 
@@ -274,7 +274,7 @@ equipments = {
 		}
 		naval_range = 4000
 		reliability = 0.65
-		max_strength = 325
+		max_strength = 650
 		naval_speed = 23
 
 
@@ -392,7 +392,7 @@ equipments = {
 		
 		surface_detection = 10
 		sub_detection = 5
-		surface_visibility = 30
+		surface_visibility = 1
 		naval_speed = 26
 		reliability = 0.70
 		
@@ -481,13 +481,13 @@ equipments = {
 		
 		surface_detection = 10
 		sub_detection = 5
-		surface_visibility = 30
+		surface_visibility = 1
 		naval_speed = 28
 		reliability = 0.80
 
 		naval_range = 4000
 		
-		max_strength = 325
+		max_strength = 650
 		
 
 
@@ -528,13 +528,13 @@ equipments = {
 		
 		surface_detection = 20
 		sub_detection = 5
-		surface_visibility = 30
+		surface_visibility = 1
 		naval_speed = 30
 		reliability = 0.85
 
 		naval_range = 5000
 		
-		max_strength = 350
+		max_strength = 700
 		
 
 
@@ -575,7 +575,7 @@ equipments = {
 		
 		surface_detection = 30
 		sub_detection = 5
-		surface_visibility = 30
+		surface_visibility = 1
 		naval_speed = 32
 		reliability = 0.90
 
