@@ -88,11 +88,10 @@ weather_extreme_cold = { # on Province
 	army_speed_factor = -0.7
 }
 weather_very_cold = { # on Province
-	winter_attrition = 0.7
-	dig_in_speed_factor = -0.8
+	winter_attrition = 0.5
 	army_attack_factor = -0.6
 	local_org_regain = -0.1
-	army_speed_factor = -0.5
+	army_speed_factor = -0.1
 }
 weather_very_hot = { # on Province
 	heat_attrition = 0.1
