@@ -47,8 +47,8 @@ settings = {
     variable = 0.25 # factor how much can vary between updates
 
     # Temperature range when should apply static modifiers
-    weather_extreme_cold = { -100.0 -20.0 }
-    weather_very_cold = { -20.0 -5.0 }
+    weather_extreme_cold = { -100.0 -30.0 }
+    weather_very_cold = { -30.0 -5.0 }
     weather_very_hot = { 27.0 32.0 }
     weather_extreme_hot = { 32.0 100.0 }
   }
