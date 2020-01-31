@@ -697,6 +697,23 @@ GER_vemork_hydroelectric_plant_category = {
 		}
 	    days_remove = 360
 	}
+
+	 GER_add_rubber = {
+		visible = {
+		    tag = GER
+		}
+		fire_only_once = yes
+		
+		available = {
+		    tag = GER
+			ITA = { controls_state = 446 }
+			date < 1940.7.1
+
+		}
+		complete_effect = {
+				add_resource = { type = rubber amount = 25 state = 57 }
+		}
+	}
 	
 	GER_take_spanish_navy = {
 		
