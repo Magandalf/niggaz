@@ -14,7 +14,7 @@ if = {
 		general_winter_idea
 		soviet_gulag_0
     }
-set_convoys = 5000
+set_convoys = 2500
 set_research_slots = 4
 set_stability = 0.5
 set_war_support = 0.8
