@@ -925,7 +925,7 @@ activate_mission = SOV_relocate_industry_from_zaporozhe
 				}
 				set_state_flag = SOV_improve_railway_3Inf
 			}
-			247 = {
+			252 = {
 				add_building_construction = {
 					type = infrastructure
 					level = 3
