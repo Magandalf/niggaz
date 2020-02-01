@@ -68,6 +68,9 @@ NDefines.NProduction.EQUIPMENT_MODULE_ADD_XP_COST = 0.0					-- XP cost for addin
 NDefines.NProduction.EQUIPMENT_MODULE_REPLACE_XP_COST = 0.0				-- XP cost for replacing one equipment module with an unrelated module when creating an equipment variant.
 NDefines.NProduction.EQUIPMENT_MODULE_CONVERT_XP_COST = 0.0				-- XP cost for converting one equipment module to a related module when creating an equipment variant.
 NDefines.NProduction.EQUIPMENT_MODULE_REMOVE_XP_COST = 0.0				-- XP cost for removing an equipment module and leaving the slot empty when creating an equipment variant.
+NDefines.NProduction.BASE_LICENSE_IC_COST = 0,							-- Base IC cost for lended license
+NDefines.NProduction.LICENSE_IC_COST_YEAR_INCREASE = 0,
+
 
 ---Military
 NDefines.NMilitary.RECON_SKILL_IMPACT = 8
@@ -115,9 +118,9 @@ NDefines.NNavy.COMBAT_MIN_HIT_CHANCE = 0.005
 NDefines.NNavy.AMPHIBIOUS_LANDING_PENALTY = -0.65
 NDefines.NNavy.SHORE_BOMBARDMENT_CAP = 0.30
 
-NDefines.NNavy.ANTI_AIR_POW_ON_INCOMING_AIR_DAMAGE = 1.0 --- (0.2 -> 0.8)
-NDefines.NNavy.SHIP_TO_FLEET_ANTI_AIR_RATIO = 0.02 --- (0.2 -> 0.01)
-NDefines.NNavy.ANTI_AIR_MULT_ON_INCOMING_AIR_DAMAGE = 0.02 --- (0.15 -> 0.07)
+NDefines.NNavy.ANTI_AIR_POW_ON_INCOMING_AIR_DAMAGE = 0.5 --- (0.2 -> 0.8)
+NDefines.NNavy.SHIP_TO_FLEET_ANTI_AIR_RATIO = 0.08 --- (0.2 -> 0.01)
+NDefines.NNavy.ANTI_AIR_MULT_ON_INCOMING_AIR_DAMAGE = 0.08 --- (0.15 -> 0.07)
 NDefines.NNavy.MAX_ANTI_AIR_REDUCTION_EFFECT_ON_INCOMING_AIR_DAMAGE = 0.8 --- (0.5 -> 0.8)
 
 NDefines.NNavy.NAVY_VISIBILITY_BONUS_ON_RETURN_FOR_REPAIR = 0.05
