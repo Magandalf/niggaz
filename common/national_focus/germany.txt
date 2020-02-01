@@ -1123,6 +1123,30 @@ focus_tree = {
 	}
 
 	focus = {
+		id = GER_extra_tech_slot_2
+		icon = GFX_focus_research
+		text = extra_tech_slot
+		prerequisite = { focus = GER_air_innovation_2 }
+		x = -1
+		y = 1
+		relative_position_id = GER_air_innovation_2
+		available = {
+		    date > 1939.1.1
+		}
+		cost = 5
+
+		ai_will_do = {
+			factor = 1
+		}
+
+		available_if_capitulated = yes
+
+		completion_reward = {
+			add_research_slot = 1
+		}
+	}
+
+	focus = {
 		id = GER_army_innovation_2
 		icon = GFX_GER_Panther_Panzer
 		prerequisite = { focus = GER_soviet_treaty }
@@ -1398,7 +1422,7 @@ focus_tree = {
 		x = 1
 		y = 2
 		relative_position_id = GER_anschluss
-		cost = 5
+		cost = 4
 		ai_will_do = {
 			factor = 10
 			modifier = {
@@ -2076,7 +2100,7 @@ focus_tree = {
 		x = 0
 		y = 1
 		relative_position_id = GER_demand_sudetenland
-		cost = 5
+		cost = 2
 		ai_will_do = {
 			factor = 10
 		}
