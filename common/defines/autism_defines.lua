@@ -174,7 +174,7 @@ NDefines.NNavy.BASE_GUN_COOLDOWNS = { -- number of hours for a gun to be ready a
 		4.0,	-- torpedos
 		1.0,	-- small guns
 	}
-NDefines.NNavy.CONVOY_HIT_PROFILE	= 180.0,  	-- convoys has this contant hit profile
+NDefines.NNavy.CONVOY_HIT_PROFILE	= 180.0  	-- convoys has this contant hit profile
 NDefines.NNavy.ORG_COST_WHILE_MOVING = { -- org cost while the ships are moving
 		0.4, -- HOLD
 		0.4, -- PATROL		
