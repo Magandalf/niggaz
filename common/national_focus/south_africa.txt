@@ -847,6 +847,8 @@ focus_tree = {
 				technology = construction4
 				technology = concentrated_industry3
 				technology = concentrated_industry4
+				technology = dispersed_industry3
+				technology = dispersed_industry4
 				technology = advanced_machine_tools
 				technology = assembly_line_production
 			}
